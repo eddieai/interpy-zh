@@ -1,0 +1,1008 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>容器（Collections） · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mutation.html" />
+    
+    
+    <link rel="prev" href="../DataStructures/classes.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">主页</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    主页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">序</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../preface/Intro-2021.html">
+            
+                <a href="../preface/Intro-2021.html">
+            
+                    
+                    2021更新版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../preface/Introduction.html">
+            
+                <a href="../preface/Introduction.html">
+            
+                    
+                    2016首版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../preface/translator.html">
+            
+                <a href="../preface/translator.html">
+            
+                    
+                    译者后记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../preface/author.html">
+            
+                <a href="../preface/author.html">
+            
+                    
+                    关于原作者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../preface/seealso.html">
+            
+                <a href="../preface/seealso.html">
+            
+                    
+                    推荐阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../preface/donors.html">
+            
+                <a href="../preface/donors.html">
+            
+                    
+                    捐赠名单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">程序员的工具</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../ProgrammerTools/virtual_environment.html">
+            
+                <a href="../ProgrammerTools/virtual_environment.html">
+            
+                    
+                    虚拟环境（virtualenv）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../ProgrammerTools/debugging.html">
+            
+                <a href="../ProgrammerTools/debugging.html">
+            
+                    
+                    调试（Debugging）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ProgrammerTools/introspection.html">
+            
+                <a href="../ProgrammerTools/introspection.html">
+            
+                    
+                    对象自省
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">语法</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Syntax/exception.html">
+            
+                <a href="../Syntax/exception.html">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../Syntax/for_else.html">
+            
+                <a href="../Syntax/for_else.html">
+            
+                    
+                    For - Else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../Syntax/ternary_operators.html">
+            
+                <a href="../Syntax/ternary_operators.html">
+            
+                    
+                    三元运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../Syntax/global_return.html">
+            
+                <a href="../Syntax/global_return.html">
+            
+                    
+                    Global 和 Return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Syntax/open_func.html">
+            
+                <a href="../Syntax/open_func.html">
+            
+                    
+                    open 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../Syntax/args_kwargs.html">
+            
+                <a href="../Syntax/args_kwargs.html">
+            
+                    
+                    *args 和 **kwargs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../Syntax/context_managers.html">
+            
+                <a href="../Syntax/context_managers.html">
+            
+                    
+                    上下文管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">函数式编程</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../FunctionalProgramming/enumerate.html">
+            
+                <a href="../FunctionalProgramming/enumerate.html">
+            
+                    
+                    枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../FunctionalProgramming/lambdas.html">
+            
+                <a href="../FunctionalProgramming/lambdas.html">
+            
+                    
+                    lambda 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../FunctionalProgramming/set_data_structure.html">
+            
+                <a href="../FunctionalProgramming/set_data_structure.html">
+            
+                    
+                    set（集合）数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../FunctionalProgramming/map_n_filter.html">
+            
+                <a href="../FunctionalProgramming/map_n_filter.html">
+            
+                    
+                    Map，Filter 和 Reduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../FunctionalProgramming/Comprehensions.html">
+            
+                <a href="../FunctionalProgramming/Comprehensions.html">
+            
+                    
+                    推导式(解析式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据结构</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../DataStructures/generators.html">
+            
+                <a href="../DataStructures/generators.html">
+            
+                    
+                    生成器（Generators）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../DataStructures/Coroutines.html">
+            
+                <a href="../DataStructures/Coroutines.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../DataStructures/classes.html">
+            
+                <a href="../DataStructures/classes.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据类型</li>
+        
+        
+    
+        <li class="chapter active" data-level="7.1" data-path="collections.html">
+            
+                <a href="collections.html">
+            
+                    
+                    容器（Collections）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="mutation.html">
+            
+                <a href="mutation.html">
+            
+                    
+                    对象变动（Mutation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="slots_magic.html">
+            
+                <a href="slots_magic.html">
+            
+                    
+                    __slots__ 魔法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">装饰器</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../decorators/decorators.html">
+            
+                <a href="../decorators/decorators.html">
+            
+                    
+                    装饰器原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../decorators/your_first_decorator.html">
+            
+                <a href="../decorators/your_first_decorator.html">
+            
+                    
+                    你的第一个装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../decorators/deco_with_args.html">
+            
+                <a href="../decorators/deco_with_args.html">
+            
+                    
+                    带参数的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../decorators/func_caching.html">
+            
+                <a href="../decorators/func_caching.html">
+            
+                    
+                    函数缓存（Function caching）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他知识</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../Extras/onelines.html">
+            
+                <a href="../Extras/onelines.html">
+            
+                    
+                    一行式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../Extras/targeting_python2_3.html">
+            
+                <a href="../Extras/targeting_python2_3.html">
+            
+                    
+                    兼容 Python 2 和 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../Extras/c_extensions.html">
+            
+                <a href="../Extras/c_extensions.html">
+            
+                    
+                    使用 C 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >容器（Collections）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="容器（collections）">容器（<code>Collections</code>）</h1>
+<p>Python 附带一个模块，它包含许多容器数据类型，名字叫作 <code>collections</code>。我们将讨论它的作用和用法。</p>
+<p>我们将讨论的是：</p>
+<ul>
+<li><code>defaultdict</code></li>
+<li><code>counter</code></li>
+<li><code>deque</code></li>
+<li><code>namedtuple</code></li>
+<li><code>enum.Enum</code> (包含在 Python 3.4 以上)</li>
+</ul>
+<h2 id="defaultdict"><code>defaultdict</code></h2>
+<p>我个人使用 <code>defaultdict</code> 较多，与 <code>dict</code> 类型不同，你不需要检查 <strong>key</strong> 是否存在，所以我们能这样做：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+colours = (
+    (<span class="hljs-string">'Yasoob'</span>, <span class="hljs-string">'Yellow'</span>),
+    (<span class="hljs-string">'Ali'</span>, <span class="hljs-string">'Blue'</span>),
+    (<span class="hljs-string">'Arham'</span>, <span class="hljs-string">'Green'</span>),
+    (<span class="hljs-string">'Ali'</span>, <span class="hljs-string">'Black'</span>),
+    (<span class="hljs-string">'Yasoob'</span>, <span class="hljs-string">'Red'</span>),
+    (<span class="hljs-string">'Ahmed'</span>, <span class="hljs-string">'Silver'</span>),
+)
+
+favourite_colours = defaultdict(<span class="hljs-built_in">list</span>)
+
+<span class="hljs-keyword">for</span> name, colour <span class="hljs-keyword">in</span> colours:
+    favourite_colours[name].append(colour)
+
+<span class="hljs-built_in">print</span>(favourite_colours)
+</code></pre>
+<h3 id="运行输出">运行输出</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># defaultdict(&lt;type 'list'&gt;,</span>
+<span class="hljs-comment">#    {'Arham': ['Green'],</span>
+<span class="hljs-comment">#     'Yasoob': ['Yellow', 'Red'],</span>
+<span class="hljs-comment">#     'Ahmed': ['Silver'],</span>
+<span class="hljs-comment">#     'Ali': ['Blue', 'Black']</span>
+<span class="hljs-comment"># })</span>
+</code></pre>
+<p>另一种重要的是例子就是：当你在一个字典中对一个键进行嵌套赋值时，如果这个键不存在，会触发 <code>keyError</code> 异常。<code>defaultdict</code> 允许我们用一个聪明的方式绕过这个问题。
+首先我分享一个使用 <code>dict</code> 触发 <code>KeyError</code> 的例子，然后提供一个使用 <code>defaultdict</code> 的解决方案。</p>
+<p><strong>问题</strong>：</p>
+<pre><code class="lang-python">some_dict = {}
+some_dict[<span class="hljs-string">'colours'</span>][<span class="hljs-string">'favourite'</span>] = <span class="hljs-string">"yellow"</span>
+
+<span class="hljs-comment">## 异常输出：KeyError: 'colours'</span>
+</code></pre>
+<p><strong>解决方案</strong>：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> collections
+tree = <span class="hljs-keyword">lambda</span>: collections.defaultdict(tree)
+some_dict = tree()
+some_dict[<span class="hljs-string">'colours'</span>][<span class="hljs-string">'favourite'</span>] = <span class="hljs-string">"yellow"</span>
+
+<span class="hljs-comment">## 运行正常</span>
+</code></pre>
+<p>你可以用 <code>json.dumps</code> 打印出 <code>some_dict</code>，例如：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> json
+<span class="hljs-built_in">print</span>(json.dumps(some_dict))
+
+<span class="hljs-comment">## 输出: {"colours": {"favourite": "yellow"}}</span>
+</code></pre>
+<h2 id="counter"><code>counter</code></h2>
+<p>Counter 是一个计数器，它可以帮助我们针对某项数据进行计数。比如它可以用来计算每个人喜欢多少种颜色：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+
+colours = (
+    (<span class="hljs-string">'Yasoob'</span>, <span class="hljs-string">'Yellow'</span>),
+    (<span class="hljs-string">'Ali'</span>, <span class="hljs-string">'Blue'</span>),
+    (<span class="hljs-string">'Arham'</span>, <span class="hljs-string">'Green'</span>),
+    (<span class="hljs-string">'Ali'</span>, <span class="hljs-string">'Black'</span>),
+    (<span class="hljs-string">'Yasoob'</span>, <span class="hljs-string">'Red'</span>),
+    (<span class="hljs-string">'Ahmed'</span>, <span class="hljs-string">'Silver'</span>),
+)
+
+favs = Counter(name <span class="hljs-keyword">for</span> name, colour <span class="hljs-keyword">in</span> colours)
+<span class="hljs-built_in">print</span>(favs)
+
+<span class="hljs-comment">## 输出:</span>
+<span class="hljs-comment">## Counter({</span>
+<span class="hljs-comment">##     'Yasoob': 2,</span>
+<span class="hljs-comment">##     'Ali': 2,</span>
+<span class="hljs-comment">##     'Arham': 1,</span>
+<span class="hljs-comment">##     'Ahmed': 1</span>
+<span class="hljs-comment">##  })</span>
+</code></pre>
+<p>我们也可以在利用它统计一个文件，例如：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">'filename'</span>, <span class="hljs-string">'rb'</span>) <span class="hljs-keyword">as</span> f:
+    line_count = Counter(f)
+<span class="hljs-built_in">print</span>(line_count)
+</code></pre>
+<h2 id="deque"><code>deque</code></h2>
+<p>deque 提供了一个双端队列，你可以从头/尾两端添加或删除元素。要想使用它，首先我们要从 <code>collections</code> 中导入 <code>deque</code> 模块：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
+</code></pre>
+<p>现在，你可以创建一个 <code>deque</code> 对象。</p>
+<pre><code class="lang-python">d = deque()
+</code></pre>
+<p>它的用法就像python的 <code>list</code>，并且提供了类似的方法，例如：</p>
+<pre><code class="lang-python">d = deque()
+d.append(<span class="hljs-string">'1'</span>)
+d.append(<span class="hljs-string">'2'</span>)
+d.append(<span class="hljs-string">'3'</span>)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(d))
+
+<span class="hljs-comment">## 输出: 3</span>
+
+<span class="hljs-built_in">print</span>(d[<span class="hljs-number">0</span>])
+
+<span class="hljs-comment">## 输出: '1'</span>
+
+<span class="hljs-built_in">print</span>(d[-<span class="hljs-number">1</span>])
+
+<span class="hljs-comment">## 输出: '3'</span>
+</code></pre>
+<p>你可以从两端取出(pop)数据：</p>
+<pre><code class="lang-python">d = deque(<span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(d))
+
+<span class="hljs-comment">## 输出: 5</span>
+
+d.popleft()
+
+<span class="hljs-comment">## 输出: 0</span>
+
+d.pop()
+
+<span class="hljs-comment">## 输出: 4</span>
+
+<span class="hljs-built_in">print</span>(d)
+
+<span class="hljs-comment">## 输出: deque([1, 2, 3])</span>
+</code></pre>
+<p>我们也可以限制这个列表的大小，当超出你设定的限制时，数据会从对队列另一端被挤出去（pop）。<br></br>最好的解释是给出一个例子：</p>
+<pre><code class="lang-python">d = deque(maxlen=<span class="hljs-number">30</span>)
+</code></pre>
+<p>现在当你插入30条数据时，最左边一端的数据将从队列中删除。</p>
+<p>你还可以从任一端扩展这个队列中的数据：</p>
+<pre><code class="lang-python">d = deque([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>])
+d.extendleft([<span class="hljs-number">0</span>])
+d.extend([<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>])
+<span class="hljs-built_in">print</span>(d)
+
+<span class="hljs-comment">## 输出: deque([0, 1, 2, 3, 4, 5, 6, 7, 8])</span>
+</code></pre>
+<h2 id="namedtuple"><code>namedtuple</code></h2>
+<p>您可能已经熟悉元组。
+一个元组是一个不可变的列表，你可以存储一个数据的序列，它和命名元组（<code>namedtuples</code>）非常像，但有几个关键的不同。<br></br>主要相似点是都不像列表，你不能修改元组中的数据。为了获取元组中的数据，你需要使用整数作为索引：</p>
+<pre><code class="lang-python">man = (<span class="hljs-string">'Ali'</span>, <span class="hljs-number">30</span>)
+<span class="hljs-built_in">print</span>(man[<span class="hljs-number">0</span>])
+
+<span class="hljs-comment">## 输出: Ali</span>
+</code></pre>
+<p>嗯，那 <code>namedtuples</code> 是什么呢？它把元组变成一个针对简单任务的容器。你不必使用整数索引来访问一个 <code>namedtuples</code> 的数据。你可以像字典（<code>dict</code>）一样访问 <code>namedtuples</code>，但 <code>namedtuples</code> 是不可变的。</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> namedtuple
+
+Animal = namedtuple(<span class="hljs-string">'Animal'</span>, <span class="hljs-string">'name age type'</span>)
+perry = Animal(name=<span class="hljs-string">"perry"</span>, age=<span class="hljs-number">31</span>, <span class="hljs-built_in">type</span>=<span class="hljs-string">"cat"</span>)
+
+<span class="hljs-built_in">print</span>(perry)
+
+<span class="hljs-comment">## 输出: Animal(name='perry', age=31, type='cat')</span>
+
+<span class="hljs-built_in">print</span>(perry.name)
+
+<span class="hljs-comment">## 输出: 'perry'</span>
+</code></pre>
+<p>现在你可以看到，我们可以用名字来访问 <code>namedtuple</code> 中的数据。我们再继续分析它。一个命名元组（<code>namedtuple</code>）有两个必需的参数。它们是元组名称和字段名称。</p>
+<p>在上面的例子中，我们的元组名称是 <code>Animal</code>，字段名称是 <code>name</code>，<code>age</code> 和 <code>type</code>。<br></br><code>namedtuple</code> 让你的元组变得<strong>自文档</strong>了。你只要看一眼就很容易理解代码是做什么的。<br></br>你也不必使用整数索引来访问一个命名元组，这让你的代码更易于维护。<br></br>而且，<strong><code>namedtuple</code> 的每个实例没有对象字典</strong>，所以它们很轻量，与普通的元组比，并不需要更多的内存。这使得它们比字典更快。</p>
+<p>然而，要记住它是一个元组，属性值在 <code>namedtuple</code> 中是不可变的，所以下面的代码不能工作：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> namedtuple
+
+Animal = namedtuple(<span class="hljs-string">'Animal'</span>, <span class="hljs-string">'name age type'</span>)
+perry = Animal(name=<span class="hljs-string">"perry"</span>, age=<span class="hljs-number">31</span>, <span class="hljs-built_in">type</span>=<span class="hljs-string">"cat"</span>)
+perry.age = <span class="hljs-number">42</span>
+
+<span class="hljs-comment">## 输出:</span>
+<span class="hljs-comment">## Traceback (most recent call last):</span>
+<span class="hljs-comment">##     File "", line 1, in</span>
+<span class="hljs-comment">## AttributeError: can't set attribute</span>
+</code></pre>
+<p>你应该使用命名元组来让代码<strong>自文档</strong>，<strong>它们向后兼容于普通的元组</strong>，这意味着你可以既使用整数索引，也可以使用名称来访问 <code>namedtuple</code>：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> namedtuple
+
+Animal = namedtuple(<span class="hljs-string">'Animal'</span>, <span class="hljs-string">'name age type'</span>)
+perry = Animal(name=<span class="hljs-string">"perry"</span>, age=<span class="hljs-number">31</span>, <span class="hljs-built_in">type</span>=<span class="hljs-string">"cat"</span>)
+<span class="hljs-built_in">print</span>(perry[<span class="hljs-number">0</span>])
+
+<span class="hljs-comment">## 输出: perry</span>
+</code></pre>
+<p>最后，你可以将一个命名元组转换为字典，方法如下：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> namedtuple
+
+Animal = namedtuple(<span class="hljs-string">'Animal'</span>, <span class="hljs-string">'name age type'</span>)
+perry = Animal(name=<span class="hljs-string">"Perry"</span>, age=<span class="hljs-number">31</span>, <span class="hljs-built_in">type</span>=<span class="hljs-string">"cat"</span>)
+<span class="hljs-built_in">print</span>(perry._asdict())
+
+<span class="hljs-comment">## 输出: OrderedDict([('name', 'Perry'), ('age', 31), ...</span>
+</code></pre>
+<h2 id="enumenum-python-34"><code>enum.Enum</code> (Python 3.4+)</h2>
+<p>另一个有用的容器是枚举对象，它属于 <code>enum</code> 模块，存在于 Python 3.4 以上版本中（同时作为一个独立的 PyPI 包 <code>enum34</code> 供老版本使用）。Enums（枚举类型）基本上是一种组织各种东西的方式。</p>
+<p>让我们回顾一下上一个 <code>Animal</code>命名元组的例子。<br></br>它有一个 <code>type</code> 字段，问题是，<code>type</code> 是一个字符串。<br></br>那么问题来了，万一程序员输入了 <code>Cat</code>，因为他按到了 Shift 键，或者输入了 <code>CAT</code>，甚至 <code>kitten</code>？</p>
+<p>枚举可以帮助我们避免这个问题，通过不使用字符串。考虑以下这个例子：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> namedtuple
+<span class="hljs-keyword">from</span> enum <span class="hljs-keyword">import</span> Enum
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Species</span>(<span class="hljs-title class_ inherited__">Enum</span>):
+    cat = <span class="hljs-number">1</span>
+    dog = <span class="hljs-number">2</span>
+    horse = <span class="hljs-number">3</span>
+    aardvark = <span class="hljs-number">4</span>
+    butterfly = <span class="hljs-number">5</span>
+    owl = <span class="hljs-number">6</span>
+    platypus = <span class="hljs-number">7</span>
+    dragon = <span class="hljs-number">8</span>
+    unicorn = <span class="hljs-number">9</span>
+    <span class="hljs-comment"># 依次类推</span>
+
+    <span class="hljs-comment"># 但我们并不想关心同一物种的年龄，所以我们可以使用一个别名</span>
+    kitten = <span class="hljs-number">1</span>  <span class="hljs-comment"># (译者注：幼小的猫咪)</span>
+    puppy = <span class="hljs-number">2</span>   <span class="hljs-comment"># (译者注：幼小的狗狗)</span>
+
+Animal = namedtuple(<span class="hljs-string">'Animal'</span>, <span class="hljs-string">'name age type'</span>)
+perry = Animal(name=<span class="hljs-string">"Perry"</span>, age=<span class="hljs-number">31</span>, <span class="hljs-built_in">type</span>=Species.cat)
+drogon = Animal(name=<span class="hljs-string">"Drogon"</span>, age=<span class="hljs-number">4</span>, <span class="hljs-built_in">type</span>=Species.dragon)
+tom = Animal(name=<span class="hljs-string">"Tom"</span>, age=<span class="hljs-number">75</span>, <span class="hljs-built_in">type</span>=Species.cat)
+charlie = Animal(name=<span class="hljs-string">"Charlie"</span>, age=<span class="hljs-number">2</span>, <span class="hljs-built_in">type</span>=Species.kitten)
+</code></pre>
+<h3 id="现在，我们进行一些测试：">现在，我们进行一些测试：</h3>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>charlie.<span class="hljs-built_in">type</span> == tom.<span class="hljs-built_in">type</span>
+<span class="hljs-literal">True</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>charlie.<span class="hljs-built_in">type</span>
+&lt;Species.cat: <span class="hljs-number">1</span>&gt;
+</code></pre>
+<p>这样就没那么容易错误，我们必须更明确，而且我们应该只使用定义后的枚举类型。</p>
+<p>有三种方法访问枚举数据，例如以下方法都可以获取到 <code>cat</code> 的值：</p>
+<pre><code class="lang-python">Species(<span class="hljs-number">1</span>)
+Species[<span class="hljs-string">'cat'</span>]
+Species.cat
+</code></pre>
+<p>这只是一个快速浏览 <code>collections</code> 模块的介绍，建议你阅读本文最后的官方文档。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../DataStructures/classes.html" class="navigation navigation-prev " aria-label="Previous page: 类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mutation.html" class="navigation navigation-next " aria-label="Next page: 对象变动（Mutation）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"parent":"数据类型","nav_order":1,"title":"容器（Collections）","level":"7.1","depth":1,"next":{"title":"对象变动（Mutation）","level":"7.2","depth":1,"path":"DataTypes/mutation.md","ref":"DataTypes/mutation.md","articles":[]},"previous":{"title":"类","level":"6.3","depth":1,"path":"DataStructures/classes.md","ref":"DataStructures/classes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"DataTypes/collections.md","mtime":"2024-08-30T16:23:28.105Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-30T16:31:31.311Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

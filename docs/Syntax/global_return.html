@@ -1,0 +1,851 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Global 和 Return · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="open_func.html" />
+    
+    
+    <link rel="prev" href="ternary_operators.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">主页</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    主页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">序</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../preface/Intro-2021.html">
+            
+                <a href="../preface/Intro-2021.html">
+            
+                    
+                    2021更新版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../preface/Introduction.html">
+            
+                <a href="../preface/Introduction.html">
+            
+                    
+                    2016首版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../preface/translator.html">
+            
+                <a href="../preface/translator.html">
+            
+                    
+                    译者后记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../preface/author.html">
+            
+                <a href="../preface/author.html">
+            
+                    
+                    关于原作者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../preface/seealso.html">
+            
+                <a href="../preface/seealso.html">
+            
+                    
+                    推荐阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../preface/donors.html">
+            
+                <a href="../preface/donors.html">
+            
+                    
+                    捐赠名单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">程序员的工具</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../ProgrammerTools/virtual_environment.html">
+            
+                <a href="../ProgrammerTools/virtual_environment.html">
+            
+                    
+                    虚拟环境（virtualenv）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../ProgrammerTools/debugging.html">
+            
+                <a href="../ProgrammerTools/debugging.html">
+            
+                    
+                    调试（Debugging）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ProgrammerTools/introspection.html">
+            
+                <a href="../ProgrammerTools/introspection.html">
+            
+                    
+                    对象自省
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">语法</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="exception.html">
+            
+                <a href="exception.html">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="for_else.html">
+            
+                <a href="for_else.html">
+            
+                    
+                    For - Else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="ternary_operators.html">
+            
+                <a href="ternary_operators.html">
+            
+                    
+                    三元运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="global_return.html">
+            
+                <a href="global_return.html">
+            
+                    
+                    Global 和 Return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="open_func.html">
+            
+                <a href="open_func.html">
+            
+                    
+                    open 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="args_kwargs.html">
+            
+                <a href="args_kwargs.html">
+            
+                    
+                    *args 和 **kwargs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="context_managers.html">
+            
+                <a href="context_managers.html">
+            
+                    
+                    上下文管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">函数式编程</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../FunctionalProgramming/enumerate.html">
+            
+                <a href="../FunctionalProgramming/enumerate.html">
+            
+                    
+                    枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../FunctionalProgramming/lambdas.html">
+            
+                <a href="../FunctionalProgramming/lambdas.html">
+            
+                    
+                    lambda 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../FunctionalProgramming/set_data_structure.html">
+            
+                <a href="../FunctionalProgramming/set_data_structure.html">
+            
+                    
+                    set（集合）数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../FunctionalProgramming/map_n_filter.html">
+            
+                <a href="../FunctionalProgramming/map_n_filter.html">
+            
+                    
+                    Map，Filter 和 Reduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../FunctionalProgramming/Comprehensions.html">
+            
+                <a href="../FunctionalProgramming/Comprehensions.html">
+            
+                    
+                    推导式(解析式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据结构</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../DataStructures/generators.html">
+            
+                <a href="../DataStructures/generators.html">
+            
+                    
+                    生成器（Generators）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../DataStructures/Coroutines.html">
+            
+                <a href="../DataStructures/Coroutines.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../DataStructures/classes.html">
+            
+                <a href="../DataStructures/classes.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据类型</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../DataTypes/collections.html">
+            
+                <a href="../DataTypes/collections.html">
+            
+                    
+                    容器（Collections）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../DataTypes/mutation.html">
+            
+                <a href="../DataTypes/mutation.html">
+            
+                    
+                    对象变动（Mutation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../DataTypes/slots_magic.html">
+            
+                <a href="../DataTypes/slots_magic.html">
+            
+                    
+                    __slots__ 魔法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">装饰器</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../decorators/decorators.html">
+            
+                <a href="../decorators/decorators.html">
+            
+                    
+                    装饰器原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../decorators/your_first_decorator.html">
+            
+                <a href="../decorators/your_first_decorator.html">
+            
+                    
+                    你的第一个装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../decorators/deco_with_args.html">
+            
+                <a href="../decorators/deco_with_args.html">
+            
+                    
+                    带参数的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../decorators/func_caching.html">
+            
+                <a href="../decorators/func_caching.html">
+            
+                    
+                    函数缓存（Function caching）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他知识</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../Extras/onelines.html">
+            
+                <a href="../Extras/onelines.html">
+            
+                    
+                    一行式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../Extras/targeting_python2_3.html">
+            
+                <a href="../Extras/targeting_python2_3.html">
+            
+                    
+                    兼容 Python 2 和 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../Extras/c_extensions.html">
+            
+                <a href="../Extras/c_extensions.html">
+            
+                    
+                    使用 C 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Global 和 Return</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="global-和-return">Global 和 Return</h1>
+<p>你也许遇到过, python中一些函数在最尾部有一个 <code>return</code> 关键字。你知道它是干嘛吗？它和其他语言的 <code>return</code> 类似。我们来检查下这个小函数：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">value1, value2</span>):
+    <span class="hljs-keyword">return</span> value1 + value2
+
+result = add(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)
+<span class="hljs-built_in">print</span>(result)
+<span class="hljs-comment"># Output: 8</span>
+</code></pre>
+<p>上面这个函数将两个值作为输入，然后输出它们相加之和。我们也可以这样做：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">value1,value2</span>):
+    <span class="hljs-keyword">global</span> result
+    result = value1 + value2
+
+add(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)
+<span class="hljs-built_in">print</span>(result)
+<span class="hljs-comment"># Output: 8</span>
+</code></pre>
+<p>那首先我们来谈谈第一段也就是包含 <code>return</code> 关键字的代码。那个函数把值赋给了调用它的变量（也就是例子中的result变量）。<br></br>大多数境况下，你并不需要使用 <code>global</code> 关键字。然而我们也来检查下另外一段也就是包含 <code>global</code> 关键字的代码。
+那个函数生成了一个 <code>global</code>（全局）变量 <code>result</code>。</p>
+<p><code>global</code> 在这的意思是什么？<code>global</code> 变量意味着我们可以在函数以外的区域都能访问这个变量。让我们通过一个例子来证明它：</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 首先，是没有使用global变量</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">value1, value2</span>):
+    result = value1 + value2
+
+add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+<span class="hljs-built_in">print</span>(result)
+
+<span class="hljs-comment"># Oh 糟了，我们遇到异常了。为什么会这样？</span>
+<span class="hljs-comment"># python解释器报错说没有一个叫result的变量。</span>
+<span class="hljs-comment"># 这是因为result变量只能在创建它的函数内部才允许访问，除非它是全局的(global)。</span>
+Traceback (most recent call last):
+  File <span class="hljs-string">""</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span>
+    result
+NameError: name <span class="hljs-string">'result'</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
+
+<span class="hljs-comment"># 现在我们运行相同的代码，不过是在将result变量设为global之后</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">value1, value2</span>):
+    <span class="hljs-keyword">global</span> result
+    result = value1 + value2
+
+add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+<span class="hljs-built_in">print</span>(result)
+<span class="hljs-number">6</span>
+</code></pre>
+<p>如我们所愿，在第二次运行时没有异常了。在实际的编程时，你应该试着避开 <code>global</code> 关键字，它只会让生活变得艰难，因为它引入了多余的变量到全局作用域了。</p>
+<h1 id="多个-return-值">多个 return 值</h1>
+<p>那如果你想从一个函数里返回两个变量而不是一个呢？
+新手们有若干种方法。最著名的方法，是使用 <code>global</code> 关键字。让我们看下这个没用的例子：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">profile</span>():
+    <span class="hljs-keyword">global</span> name
+    <span class="hljs-keyword">global</span> age
+    name = <span class="hljs-string">"Danny"</span>
+    age = <span class="hljs-number">30</span>
+
+profile()
+<span class="hljs-built_in">print</span>(name)
+<span class="hljs-comment"># Output: Danny</span>
+
+<span class="hljs-built_in">print</span>(age)
+<span class="hljs-comment"># Output: 30</span>
+</code></pre>
+<p><strong>注意:</strong> 不要试着使用上述方法。重要的事情说三遍，不要试着使用上述方法！不要试着使用上述方法！</p>
+<p>有些人试着在函数结束时，返回一个包含多个值的 <code>tuple</code>(元组)，<code>list</code>(列表)或者 <code>dict</code>(字典)，来解决这个问题。这是一种可行的方式，而且使用起来像一个黑魔法：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">profile</span>():
+    name = <span class="hljs-string">"Danny"</span>
+    age = <span class="hljs-number">30</span>
+    <span class="hljs-keyword">return</span> (name, age)
+
+profile_data = profile()
+<span class="hljs-built_in">print</span>(profile_data[<span class="hljs-number">0</span>])
+<span class="hljs-comment"># Output: Danny</span>
+
+<span class="hljs-built_in">print</span>(profile_data[<span class="hljs-number">1</span>])
+<span class="hljs-comment"># Output: 30</span>
+</code></pre>
+<p>或者按照更常见的惯例：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">profile</span>():
+    name = <span class="hljs-string">"Danny"</span>
+    age = <span class="hljs-number">30</span>
+    <span class="hljs-keyword">return</span> name, age
+</code></pre>
+<p>这是一种比列表和字典更好的方式。不要使用 <code>global</code> 关键字，除非你知道你正在做什么。<code>global</code> 也许在某些场景下是一个更好的选择（但其中大多数情况都不是）。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ternary_operators.html" class="navigation navigation-prev " aria-label="Previous page: 三元运算符">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="open_func.html" class="navigation navigation-next " aria-label="Next page: open 函数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"parent":"语法","nav_order":4,"title":"Global 和 Return","level":"4.4","depth":1,"next":{"title":"open 函数","level":"4.5","depth":1,"path":"Syntax/open_func.md","ref":"Syntax/open_func.md","articles":[]},"previous":{"title":"三元运算符","level":"4.3","depth":1,"path":"Syntax/ternary_operators.md","ref":"Syntax/ternary_operators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Syntax/global_return.md","mtime":"2024-08-30T16:23:28.127Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-30T16:31:31.311Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

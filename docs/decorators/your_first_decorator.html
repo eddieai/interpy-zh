@@ -1,0 +1,894 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>你的第一个装饰器 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="deco_with_args.html" />
+    
+    
+    <link rel="prev" href="decorators.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">主页</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    主页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">序</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../preface/Intro-2021.html">
+            
+                <a href="../preface/Intro-2021.html">
+            
+                    
+                    2021更新版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../preface/Introduction.html">
+            
+                <a href="../preface/Introduction.html">
+            
+                    
+                    2016首版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../preface/translator.html">
+            
+                <a href="../preface/translator.html">
+            
+                    
+                    译者后记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../preface/author.html">
+            
+                <a href="../preface/author.html">
+            
+                    
+                    关于原作者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../preface/seealso.html">
+            
+                <a href="../preface/seealso.html">
+            
+                    
+                    推荐阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../preface/donors.html">
+            
+                <a href="../preface/donors.html">
+            
+                    
+                    捐赠名单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">程序员的工具</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../ProgrammerTools/virtual_environment.html">
+            
+                <a href="../ProgrammerTools/virtual_environment.html">
+            
+                    
+                    虚拟环境（virtualenv）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../ProgrammerTools/debugging.html">
+            
+                <a href="../ProgrammerTools/debugging.html">
+            
+                    
+                    调试（Debugging）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ProgrammerTools/introspection.html">
+            
+                <a href="../ProgrammerTools/introspection.html">
+            
+                    
+                    对象自省
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">语法</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Syntax/exception.html">
+            
+                <a href="../Syntax/exception.html">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../Syntax/for_else.html">
+            
+                <a href="../Syntax/for_else.html">
+            
+                    
+                    For - Else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../Syntax/ternary_operators.html">
+            
+                <a href="../Syntax/ternary_operators.html">
+            
+                    
+                    三元运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../Syntax/global_return.html">
+            
+                <a href="../Syntax/global_return.html">
+            
+                    
+                    Global 和 Return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Syntax/open_func.html">
+            
+                <a href="../Syntax/open_func.html">
+            
+                    
+                    open 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../Syntax/args_kwargs.html">
+            
+                <a href="../Syntax/args_kwargs.html">
+            
+                    
+                    *args 和 **kwargs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../Syntax/context_managers.html">
+            
+                <a href="../Syntax/context_managers.html">
+            
+                    
+                    上下文管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">函数式编程</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../FunctionalProgramming/enumerate.html">
+            
+                <a href="../FunctionalProgramming/enumerate.html">
+            
+                    
+                    枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../FunctionalProgramming/lambdas.html">
+            
+                <a href="../FunctionalProgramming/lambdas.html">
+            
+                    
+                    lambda 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../FunctionalProgramming/set_data_structure.html">
+            
+                <a href="../FunctionalProgramming/set_data_structure.html">
+            
+                    
+                    set（集合）数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../FunctionalProgramming/map_n_filter.html">
+            
+                <a href="../FunctionalProgramming/map_n_filter.html">
+            
+                    
+                    Map，Filter 和 Reduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../FunctionalProgramming/Comprehensions.html">
+            
+                <a href="../FunctionalProgramming/Comprehensions.html">
+            
+                    
+                    推导式(解析式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据结构</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../DataStructures/generators.html">
+            
+                <a href="../DataStructures/generators.html">
+            
+                    
+                    生成器（Generators）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../DataStructures/Coroutines.html">
+            
+                <a href="../DataStructures/Coroutines.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../DataStructures/classes.html">
+            
+                <a href="../DataStructures/classes.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据类型</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../DataTypes/collections.html">
+            
+                <a href="../DataTypes/collections.html">
+            
+                    
+                    容器（Collections）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../DataTypes/mutation.html">
+            
+                <a href="../DataTypes/mutation.html">
+            
+                    
+                    对象变动（Mutation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../DataTypes/slots_magic.html">
+            
+                <a href="../DataTypes/slots_magic.html">
+            
+                    
+                    __slots__ 魔法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">装饰器</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="decorators.html">
+            
+                <a href="decorators.html">
+            
+                    
+                    装饰器原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="8.2" data-path="your_first_decorator.html">
+            
+                <a href="your_first_decorator.html">
+            
+                    
+                    你的第一个装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="deco_with_args.html">
+            
+                <a href="deco_with_args.html">
+            
+                    
+                    带参数的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="func_caching.html">
+            
+                <a href="func_caching.html">
+            
+                    
+                    函数缓存（Function caching）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他知识</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../Extras/onelines.html">
+            
+                <a href="../Extras/onelines.html">
+            
+                    
+                    一行式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../Extras/targeting_python2_3.html">
+            
+                <a href="../Extras/targeting_python2_3.html">
+            
+                    
+                    兼容 Python 2 和 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../Extras/c_extensions.html">
+            
+                <a href="../Extras/c_extensions.html">
+            
+                    
+                    使用 C 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >你的第一个装饰器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="你的第一个装饰器">你的第一个装饰器</h1>
+<p>在上一个例子里，其实我们已经创建了一个装饰器！现在我们修改下上一个装饰器，并编写一个稍微更有用点的程序：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">a_new_decorator</span>(<span class="hljs-params">a_func</span>):
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapTheFunction</span>():
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"I am doing some boring work before executing a_func()"</span>)
+
+        a_func()
+
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"I am doing some boring work after executing a_func()"</span>)
+
+    <span class="hljs-keyword">return</span> wrapTheFunction
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">a_function_requiring_decoration</span>():
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I am the function which needs some decoration to remove my foul smell"</span>)
+
+a_function_requiring_decoration()
+<span class="hljs-comment">#outputs: "I am the function which needs some decoration to remove my foul smell"</span>
+
+a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)
+<span class="hljs-comment">#now a_function_requiring_decoration is wrapped by wrapTheFunction()</span>
+
+a_function_requiring_decoration()
+<span class="hljs-comment">#outputs:I am doing some boring work before executing a_func()</span>
+<span class="hljs-comment">#        I am the function which needs some decoration to remove my foul smell</span>
+<span class="hljs-comment">#        I am doing some boring work after executing a_func()</span>
+</code></pre>
+<p>你看明白了吗？我们刚刚应用了之前学习到的原理。这正是python中装饰器做的事情！它们封装一个函数，并且用这样或者那样的方式来修改它的行为。现在你也许疑惑，我们在代码里并没有使用 <code>@</code> 符号？那只是一个简短的方式来生成一个被装饰的函数。这里是我们如何使用 <code>@</code> 来运行之前的代码：</p>
+<pre><code class="lang-python"><span class="hljs-meta">@a_new_decorator</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">a_function_requiring_decoration</span>():
+    <span class="hljs-string">"""Hey you! Decorate me!"""</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I am the function which needs some decoration to "</span>
+          <span class="hljs-string">"remove my foul smell"</span>)
+
+a_function_requiring_decoration()
+<span class="hljs-comment">#outputs: I am doing some boring work before executing a_func()</span>
+<span class="hljs-comment">#         I am the function which needs some decoration to remove my foul smell</span>
+<span class="hljs-comment">#         I am doing some boring work after executing a_func()</span>
+
+<span class="hljs-comment">#the @a_new_decorator is just a short way of saying:</span>
+a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)
+</code></pre>
+<p>希望你现在对 Python 装饰器的工作原理有一个基本的理解。如果我们运行如下代码会存在一个问题：</p>
+<pre><code class="lang-python"><span class="hljs-built_in">print</span>(a_function_requiring_decoration.__name__)
+<span class="hljs-comment"># Output: wrapTheFunction</span>
+</code></pre>
+<p>这并不是我们想要的！Ouput 输出应该是 “a_function_requiring_decoration”。这里的函数被 warpTheFunction 替代了。它重写了我们函数的名字和注释文档（docstring）。幸运的是 Python 提供给我们一个简单的函数来解决这个问题，那就是 <code>functools.wraps</code>。我们修改上一个例子来使用 <code>functools.wraps</code>：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">a_new_decorator</span>(<span class="hljs-params">a_func</span>):
+<span class="hljs-meta">    @wraps(<span class="hljs-params">a_func</span>)</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">wrapTheFunction</span>():
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"I am doing some boring work before executing a_func()"</span>)
+        a_func()
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"I am doing some boring work after executing a_func()"</span>)
+    <span class="hljs-keyword">return</span> wrapTheFunction
+
+<span class="hljs-meta">@a_new_decorator</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">a_function_requiring_decoration</span>():
+    <span class="hljs-string">"""Hey yo! Decorate me!"""</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"I am the function which needs some decoration to "</span>
+          <span class="hljs-string">"remove my foul smell"</span>)
+
+<span class="hljs-built_in">print</span>(a_function_requiring_decoration.__name__)
+<span class="hljs-comment"># Output: a_function_requiring_decoration</span>
+</code></pre>
+<p>现在好多了。我们接下来学习装饰器的一些常用场景。</p>
+<p>蓝本规范:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">decorator_name</span>(<span class="hljs-params">f</span>):
+<span class="hljs-meta">    @wraps(<span class="hljs-params">f</span>)</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">decorated</span>(<span class="hljs-params">*args, **kwargs</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> can_run:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">"Function will not run"</span>
+        <span class="hljs-keyword">return</span> f(*args, **kwargs)
+    <span class="hljs-keyword">return</span> decorated
+
+<span class="hljs-meta">@decorator_name</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>():
+    <span class="hljs-keyword">return</span>(<span class="hljs-string">"Function is running"</span>)
+
+can_run = <span class="hljs-literal">True</span>
+<span class="hljs-built_in">print</span>(func())
+<span class="hljs-comment"># Output: Function is running</span>
+
+can_run = <span class="hljs-literal">False</span>
+<span class="hljs-built_in">print</span>(func())
+<span class="hljs-comment"># Output: Function will not run</span>
+</code></pre>
+<p>注意：<code>@wraps</code> 接受一个函数来进行装饰，并加入了复制函数名称、注释文档、参数列表等等的功能。这可以让我们在装饰器里面访问在装饰之前的函数的属性。</p>
+<h1 id="使用场景">使用场景</h1>
+<p>现在我们来看一下装饰器在哪些地方特别耀眼，以及使用它可以让一些事情管理起来变得更简单。</p>
+<h1 id="授权（authorization）">授权（Authorization）</h1>
+<p>装饰器能有助于检查某个人是否被授权去使用一个 web 应用的端点（endpoint）。它们被大量使用于 Flask 和 Django web 框架中。这里是一个例子来使用基于装饰器的授权：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">requires_auth</span>(<span class="hljs-params">f</span>):
+<span class="hljs-meta">    @wraps(<span class="hljs-params">f</span>)</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">decorated</span>(<span class="hljs-params">*args, **kwargs</span>):
+        auth = request.authorization
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> auth <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> check_auth(auth.username, auth.password):
+            authenticate()
+        <span class="hljs-keyword">return</span> f(*args, **kwargs)
+    <span class="hljs-keyword">return</span> decorated
+</code></pre>
+<h1 id="日志（logging）">日志（Logging）</h1>
+<p>日志是装饰器运用的另一个亮点。这是个例子：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> wraps
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">logit</span>(<span class="hljs-params">func</span>):
+<span class="hljs-meta">    @wraps(<span class="hljs-params">func</span>)</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">with_logging</span>(<span class="hljs-params">*args, **kwargs</span>):
+        <span class="hljs-built_in">print</span>(func.__name__ + <span class="hljs-string">" was called"</span>)
+        <span class="hljs-keyword">return</span> func(*args, **kwargs)
+    <span class="hljs-keyword">return</span> with_logging
+
+<span class="hljs-meta">@logit</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">addition_func</span>(<span class="hljs-params">x</span>):
+   <span class="hljs-string">"""Do some math."""</span>
+   <span class="hljs-keyword">return</span> x + x
+
+
+result = addition_func(<span class="hljs-number">4</span>)
+<span class="hljs-comment"># Output: addition_func was called</span>
+</code></pre>
+<p>我敢肯定你已经在思考装饰器的一个其他聪明用法了。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="decorators.html" class="navigation navigation-prev " aria-label="Previous page: 装饰器原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="deco_with_args.html" class="navigation navigation-next " aria-label="Next page: 带参数的装饰器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"parent":"装饰器","nav_order":2,"title":"你的第一个装饰器","level":"8.2","depth":1,"next":{"title":"带参数的装饰器","level":"8.3","depth":1,"path":"decorators/deco_with_args.md","ref":"decorators/deco_with_args.md","articles":[]},"previous":{"title":"装饰器原理","level":"8.1","depth":1,"path":"decorators/decorators.md","ref":"decorators/decorators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"decorators/your_first_decorator.md","mtime":"2024-08-30T16:23:28.136Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-30T16:31:31.311Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

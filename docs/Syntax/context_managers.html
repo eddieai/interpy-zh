@@ -1,0 +1,873 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>上下文管理器 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 5.1.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../FunctionalProgramming/enumerate.html" />
+    
+    
+    <link rel="prev" href="args_kwargs.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">主页</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    主页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">序</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../preface/Intro-2021.html">
+            
+                <a href="../preface/Intro-2021.html">
+            
+                    
+                    2021更新版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../preface/Introduction.html">
+            
+                <a href="../preface/Introduction.html">
+            
+                    
+                    2016首版-序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../preface/translator.html">
+            
+                <a href="../preface/translator.html">
+            
+                    
+                    译者后记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../preface/author.html">
+            
+                <a href="../preface/author.html">
+            
+                    
+                    关于原作者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../preface/seealso.html">
+            
+                <a href="../preface/seealso.html">
+            
+                    
+                    推荐阅读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../preface/donors.html">
+            
+                <a href="../preface/donors.html">
+            
+                    
+                    捐赠名单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">程序员的工具</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../ProgrammerTools/virtual_environment.html">
+            
+                <a href="../ProgrammerTools/virtual_environment.html">
+            
+                    
+                    虚拟环境（virtualenv）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../ProgrammerTools/debugging.html">
+            
+                <a href="../ProgrammerTools/debugging.html">
+            
+                    
+                    调试（Debugging）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../ProgrammerTools/introspection.html">
+            
+                <a href="../ProgrammerTools/introspection.html">
+            
+                    
+                    对象自省
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">语法</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="exception.html">
+            
+                <a href="exception.html">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="for_else.html">
+            
+                <a href="for_else.html">
+            
+                    
+                    For - Else
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="ternary_operators.html">
+            
+                <a href="ternary_operators.html">
+            
+                    
+                    三元运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="global_return.html">
+            
+                <a href="global_return.html">
+            
+                    
+                    Global 和 Return
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="open_func.html">
+            
+                <a href="open_func.html">
+            
+                    
+                    open 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="args_kwargs.html">
+            
+                <a href="args_kwargs.html">
+            
+                    
+                    *args 和 **kwargs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.7" data-path="context_managers.html">
+            
+                <a href="context_managers.html">
+            
+                    
+                    上下文管理器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">函数式编程</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../FunctionalProgramming/enumerate.html">
+            
+                <a href="../FunctionalProgramming/enumerate.html">
+            
+                    
+                    枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../FunctionalProgramming/lambdas.html">
+            
+                <a href="../FunctionalProgramming/lambdas.html">
+            
+                    
+                    lambda 表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../FunctionalProgramming/set_data_structure.html">
+            
+                <a href="../FunctionalProgramming/set_data_structure.html">
+            
+                    
+                    set（集合）数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../FunctionalProgramming/map_n_filter.html">
+            
+                <a href="../FunctionalProgramming/map_n_filter.html">
+            
+                    
+                    Map，Filter 和 Reduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../FunctionalProgramming/Comprehensions.html">
+            
+                <a href="../FunctionalProgramming/Comprehensions.html">
+            
+                    
+                    推导式(解析式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据结构</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../DataStructures/generators.html">
+            
+                <a href="../DataStructures/generators.html">
+            
+                    
+                    生成器（Generators）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../DataStructures/Coroutines.html">
+            
+                <a href="../DataStructures/Coroutines.html">
+            
+                    
+                    协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../DataStructures/classes.html">
+            
+                <a href="../DataStructures/classes.html">
+            
+                    
+                    类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据类型</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../DataTypes/collections.html">
+            
+                <a href="../DataTypes/collections.html">
+            
+                    
+                    容器（Collections）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../DataTypes/mutation.html">
+            
+                <a href="../DataTypes/mutation.html">
+            
+                    
+                    对象变动（Mutation）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../DataTypes/slots_magic.html">
+            
+                <a href="../DataTypes/slots_magic.html">
+            
+                    
+                    __slots__ 魔法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">装饰器</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../decorators/decorators.html">
+            
+                <a href="../decorators/decorators.html">
+            
+                    
+                    装饰器原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../decorators/your_first_decorator.html">
+            
+                <a href="../decorators/your_first_decorator.html">
+            
+                    
+                    你的第一个装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../decorators/deco_with_args.html">
+            
+                <a href="../decorators/deco_with_args.html">
+            
+                    
+                    带参数的装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../decorators/func_caching.html">
+            
+                <a href="../decorators/func_caching.html">
+            
+                    
+                    函数缓存（Function caching）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他知识</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../Extras/onelines.html">
+            
+                <a href="../Extras/onelines.html">
+            
+                    
+                    一行式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../Extras/targeting_python2_3.html">
+            
+                <a href="../Extras/targeting_python2_3.html">
+            
+                    
+                    兼容 Python 2 和 3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../Extras/c_extensions.html">
+            
+                <a href="../Extras/c_extensions.html">
+            
+                    
+                    使用 C 扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >上下文管理器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="上下文管理器">上下文管理器</h1>
+<p>上下文管理器（Context managers）允许你在有需要的时候，精确地分配和释放资源。  </p>
+<p>使用上下文管理器最广泛的案例就是 <code>with</code> 语句了。
+想象下你有两个需要结对执行的相关操作，然后还要在它们中间放置一段代码。
+上下文管理器就是专门让你做这种事情的。举个例子：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">'some_file'</span>, <span class="hljs-string">'w'</span>) <span class="hljs-keyword">as</span> opened_file:
+    opened_file.write(<span class="hljs-string">'Hola!'</span>)
+</code></pre>
+<p>上面这段代码打开了一个文件，往里面写入了一些数据，然后关闭该文件。如果在往文件写数据时发生异常，它也会尝试去关闭文件。上面那段代码与这一段是等价的：</p>
+<pre><code class="lang-python">file = <span class="hljs-built_in">open</span>(<span class="hljs-string">'some_file'</span>, <span class="hljs-string">'w'</span>)
+<span class="hljs-keyword">try</span>:
+    file.write(<span class="hljs-string">'Hola!'</span>)
+<span class="hljs-keyword">finally</span>:
+    file.close()
+</code></pre>
+<p>当与第一个例子对比时，我们可以看到，通过使用 <code>with</code>，许多样板代码（boilerplate code）被消掉了。 这就是 <code>with</code> 语句的主要优势，它确保我们的文件会被关闭，而不用关注嵌套代码如何退出。</p>
+<p>上下文管理器的一个常见用例，是资源的加锁和解锁，以及关闭已打开的文件（就像我已经展示给你看的）。</p>
+<p>让我们看看如何来实现我们自己的上下文管理器。这会让我们更完全地理解在这些场景背后都发生着什么。</p>
+<h1 id="基于类的实现">基于类的实现</h1>
+<p>一个上下文管理器的类，最起码要定义 <code>__enter__</code> 和 <code>__exit__</code> 方法。
+让我们来构造我们自己的开启文件的上下文管理器，并学习下基础知识。</p>
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">File</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, file_name, method</span>):
+        <span class="hljs-variable language_">self</span>.file_obj = <span class="hljs-built_in">open</span>(file_name, method)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__enter__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.file_obj
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__exit__</span>(<span class="hljs-params">self, <span class="hljs-built_in">type</span>, value, traceback</span>):
+        <span class="hljs-variable language_">self</span>.file_obj.close()
+</code></pre>
+<p>通过定义 <code>__enter__</code> 和 <code>__exit__</code> 方法，我们可以在<code>with</code>语句里使用它。我们来试试：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> File(<span class="hljs-string">'demo.txt'</span>, <span class="hljs-string">'w'</span>) <span class="hljs-keyword">as</span> opened_file:
+    opened_file.write(<span class="hljs-string">'Hola!'</span>)
+</code></pre>
+<p>我们的 <code>__exit__</code> 函数接受三个参数。这些参数对于每个上下文管理器类中的 <code>__exit__</code> 方法都是必须的。我们来谈谈在底层都发生了什么。</p>
+<ol>
+<li><code>with</code> 语句先暂存了 <code>File</code> 类的 <code>__exit__</code> 方法。</li>
+<li>然后它调用 <code>File</code> 类的 <code>__enter__</code> 方法。</li>
+<li><code>__enter__</code> 方法打开文件并返回给 <code>with</code> 语句。</li>
+<li>打开的文件句柄被传递给 <code>opened_file</code> 参数。</li>
+<li>我们使用 <code>.write()</code> 来写文件。</li>
+<li><code>with</code> 语句调用之前暂存的 <code>__exit__</code> 方法。</li>
+<li><code>__exit__</code> 方法关闭了文件。</li>
+</ol>
+<h1 id="处理异常">处理异常</h1>
+<p>我们还没有谈到 <code>__exit__</code> 方法的这三个参数：<code>type</code>，<code>value</code> 和 <code>traceback</code>。
+在第4步和第6步之间，如果发生异常，Python 会将异常的 <code>type</code>，<code>value</code> 和 <code>traceback</code> 传递给 <code>__exit__</code> 方法。
+它让 <code>__exit__</code> 方法来决定如何关闭文件以及是否需要其他步骤。在我们的案例中，我们并没有注意它们。</p>
+<p>那如果我们的文件对象抛出一个异常呢？万一我们尝试访问文件对象的一个不支持的方法。举个例子：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> File(<span class="hljs-string">'demo.txt'</span>, <span class="hljs-string">'w'</span>) <span class="hljs-keyword">as</span> opened_file:
+    opened_file.undefined_function(<span class="hljs-string">'Hola!'</span>)
+</code></pre>
+<p>我们来列一下，当异常发生时，<code>with</code> 语句会采取哪些步骤。</p>
+<ol>
+<li>它把异常的 <code>type</code>，<code>value</code> 和 <code>traceback</code> 传递给 <code>__exit__</code>方法。</li>
+<li>它让 <code>__exit__</code> 方法来处理异常。</li>
+<li>如果 <code>__exit__</code> 返回的是 True，那么这个异常就被优雅地处理了。</li>
+<li>如果 <code>__exit__</code> 返回的是 True 以外的任何东西，那么这个异常将被 <code>with</code> 语句抛出。</li>
+</ol>
+<p>在我们的案例中，<code>__exit__</code> 方法返回的是 <code>None</code> （如果没有 <code>return</code> 语句那么方法会返回 <code>None</code>）。因此，<code>with</code> 语句抛出了那个异常。</p>
+<pre><code class="lang-python">Traceback (most recent call last):
+  File <span class="hljs-string">"&lt;stdin&gt;"</span>, line <span class="hljs-number">2</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+AttributeError: <span class="hljs-string">'file'</span> <span class="hljs-built_in">object</span> has no attribute <span class="hljs-string">'undefined_function'</span>
+</code></pre>
+<p>我们尝试下在 <code>__exit__</code> 方法中处理异常：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">File</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, file_name, method</span>):
+        <span class="hljs-variable language_">self</span>.file_obj = <span class="hljs-built_in">open</span>(file_name, method)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__enter__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.file_obj
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__exit__</span>(<span class="hljs-params">self, <span class="hljs-built_in">type</span>, value, traceback</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Exception has been handled"</span>)
+        <span class="hljs-variable language_">self</span>.file_obj.close()
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
+
+<span class="hljs-keyword">with</span> File(<span class="hljs-string">'demo.txt'</span>, <span class="hljs-string">'w'</span>) <span class="hljs-keyword">as</span> opened_file:
+    opened_file.undefined_function()
+
+<span class="hljs-comment"># Output: Exception has been handled</span>
+</code></pre>
+<p>我们的 <code>__exit__</code> 方法返回了 <code>True</code>，因此没有异常会被 <code>with</code> 语句抛出。</p>
+<p>这还不是实现上下文管理器的唯一方式。还有一种方式，我们会在下一节中一起看看。</p>
+<h1 id="基于生成器的实现">基于生成器的实现</h1>
+<p>我们还可以用装饰器（decorators）和生成器（generators）来实现上下文管理器。
+Python 有个 <code>contextlib</code> 模块专门用于这个目的。我们可以使用一个生成器函数来实现一个上下文管理器，而不是使用一个类。
+让我们看看一个基本的，没用的例子：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> contextlib <span class="hljs-keyword">import</span> contextmanager
+
+<span class="hljs-meta">@contextmanager</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">open_file</span>(<span class="hljs-params">name</span>):
+    f = <span class="hljs-built_in">open</span>(name, <span class="hljs-string">'w'</span>)
+    <span class="hljs-keyword">yield</span> f
+    f.close()
+</code></pre>
+<p>OK啦！这个实现方式看起来更加直观和简单。然而，这个方法需要关于生成器、<code>yield</code> 和装饰器的一些知识。在这个例子中我们还没有捕捉可能产生的任何异常。它的工作方式和之前的方法大致相同。</p>
+<p>让我们小小地剖析下这个方法。</p>
+<ol>
+<li>Python 解释器遇到了 <code>yield</code> 关键字。因为这个缘故它创建了一个生成器而不是一个普通的函数。</li>
+<li>因为这个装饰器，<code>contextmanager</code> 会被调用并传入函数名（<code>open_file</code>）作为参数。</li>
+<li><code>contextmanager</code> 函数返回一个以 <code>GeneratorContextManager</code> 对象封装过的生成器。</li>
+<li>这个 <code>GeneratorContextManager</code> 被赋值给 <code>open_file</code> 函数，我们实际上是在调用 <code>GeneratorContextManager</code> 对象。</li>
+</ol>
+<p>那现在我们既然知道了所有这些，我们可以用这个新生成的上下文管理器了，像这样：</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> open_file(<span class="hljs-string">'some_file'</span>) <span class="hljs-keyword">as</span> f:
+    f.write(<span class="hljs-string">'hola!'</span>)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="args_kwargs.html" class="navigation navigation-prev " aria-label="Previous page: *args 和 **kwargs">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../FunctionalProgramming/enumerate.html" class="navigation navigation-next " aria-label="Next page: 枚举">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"parent":"语法","nav_order":7,"title":"上下文管理器","level":"4.7","depth":1,"next":{"title":"枚举","level":"5.1","depth":1,"path":"FunctionalProgramming/enumerate.md","ref":"FunctionalProgramming/enumerate.md","articles":[]},"previous":{"title":"*args 和 **kwargs","level":"4.6","depth":1,"path":"Syntax/args_kwargs.md","ref":"Syntax/args_kwargs.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Syntax/context_managers.md","mtime":"2024-08-30T16:23:28.127Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-08-30T16:31:31.311Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
