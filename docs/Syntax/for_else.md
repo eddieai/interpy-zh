@@ -9,7 +9,7 @@ nav_order: 2
 
 我们先从已经知道的开始。我们知道可以像这样使用 ```for``` 循环：
 
-```python
+```pythonthon
 fruits = ['apple', 'banana', 'mango']
 for fruit in fruits:
     print(fruit.capitalize())
@@ -35,7 +35,7 @@ for fruit in fruits:
 
 这就是 ```for/else``` 循环的基本结构：
 
-```python
+```pythonthon
 for item in container:
     if search_something(item):
         # Found it!
@@ -48,7 +48,7 @@ else:
 
 考虑下这个简单的案例，它是我从官方文档里拿来的：
 
-```python
+```pythonthon
 for n in range(2, 10):
     for x in range(2, n):
         if n % x == 0:
@@ -58,7 +58,7 @@ for n in range(2, 10):
 
 它会找出2到10之间的数字的因子。现在是趣味环节了。我们可以加上一个附加的else语句块，来抓住质数，并且告诉我们：
 
-```python
+```pythonthon
 for n in range(2, 10):
     for x in range(2, n):
         if n % x == 0:

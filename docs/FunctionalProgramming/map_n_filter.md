@@ -14,13 +14,13 @@ Map，Filter 和 Reduce 三个函数能为函数式编程提供便利。我们�
 
 **规范**
 
-```python
+```pythonthon
 map(function_to_apply, list_of_inputs)
 ```
 
 大多数时候，我们要把列表中所有元素一个个地传递给一个函数，并收集输出。比方说：
 
-```python
+```pythonthon
 items = [1, 2, 3, 4, 5]
 squared = []
 for i in items:
@@ -29,7 +29,7 @@ for i in items:
 
 `Map` 可以让我们用一种简单而漂亮得多的方式来实现。就是这样：
 
-```python
+```pythonthon
 items = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, items))
 ```
@@ -37,7 +37,7 @@ squared = list(map(lambda x: x**2, items))
 大多数时候，我们使用匿名函数（lambdas）来配合 `map`, 所以我在上面也是这么做的。
 不仅用于一列表的输入， 我们甚至可以用于一列表的函数！
 
-```python
+```pythonthon
 def multiply(x):
         return (x*x)
 def add(x):
@@ -63,7 +63,7 @@ for i in range(5):
 
 顾名思义，```filter``` 过滤列表中的元素，并且返回一个由所有符合要求的元素所构成的列表，```符合要求```即函数映射到该元素时返回值为True。这里是一个简短的例子：
 
-```python
+```pythonthon
 number_list = range(-5, 5)
 less_than_zero = filter(lambda x: x < 0, number_list)
 print(list(less_than_zero))  
@@ -88,7 +88,7 @@ print(list(less_than_zero))
 
 现在我们来试试 reduce：
 
-```python
+```pythonthon
 from functools import reduce
 product = reduce( (lambda x, y: x * y), [1, 2, 3, 4] )
 

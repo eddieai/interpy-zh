@@ -20,7 +20,7 @@ Python 附带一个模块，它包含许多容器数据类型，名字叫作 ```
 
 我个人使用 ```defaultdict``` 较多，与 ```dict``` 类型不同，你不需要检查 **key** 是否存在，所以我们能这样做：
 
-```python
+```pythonthon
 from collections import defaultdict
 
 colours = (
@@ -42,7 +42,7 @@ print(favourite_colours)
 
 ### 运行输出
 
-```python
+```pythonthon
 # defaultdict(<type 'list'>,
 #    {'Arham': ['Green'],
 #     'Yasoob': ['Yellow', 'Red'],
@@ -56,7 +56,7 @@ print(favourite_colours)
 
 **问题**：
 
-```python
+```pythonthon
 some_dict = {}
 some_dict['colours']['favourite'] = "yellow"
 
@@ -65,7 +65,7 @@ some_dict['colours']['favourite'] = "yellow"
 
 **解决方案**：
 
-```python
+```pythonthon
 import collections
 tree = lambda: collections.defaultdict(tree)
 some_dict = tree()
@@ -76,7 +76,7 @@ some_dict['colours']['favourite'] = "yellow"
 
 你可以用 ```json.dumps``` 打印出 ```some_dict```，例如：
 
-```python
+```pythonthon
 import json
 print(json.dumps(some_dict))
 
@@ -87,7 +87,7 @@ print(json.dumps(some_dict))
 
 Counter 是一个计数器，它可以帮助我们针对某项数据进行计数。比如它可以用来计算每个人喜欢多少种颜色：
 
-```python
+```pythonthon
 from collections import Counter
 
 colours = (
@@ -113,7 +113,7 @@ print(favs)
 
 我们也可以在利用它统计一个文件，例如：
 
-```python
+```pythonthon
 with open('filename', 'rb') as f:
     line_count = Counter(f)
 print(line_count)
@@ -123,19 +123,19 @@ print(line_count)
 
 deque 提供了一个双端队列，你可以从头/尾两端添加或删除元素。要想使用它，首先我们要从 ```collections``` 中导入 ```deque``` 模块：
 
-```python
+```pythonthon
 from collections import deque
 ```
 
 现在，你可以创建一个 ```deque``` 对象。
 
-```python
+```pythonthon
 d = deque()
 ```
 
 它的用法就像python的 ```list```，并且提供了类似的方法，例如：
 
-```python
+```pythonthon
 d = deque()
 d.append('1')
 d.append('2')
@@ -156,7 +156,7 @@ print(d[-1])
 
 你可以从两端取出(pop)数据：
 
-```python
+```pythonthon
 d = deque(range(5))
 print(len(d))
 
@@ -178,7 +178,7 @@ print(d)
 我们也可以限制这个列表的大小，当超出你设定的限制时，数据会从对队列另一端被挤出去（pop）。  
 最好的解释是给出一个例子：
 
-```python
+```pythonthon
 d = deque(maxlen=30)
 ```
 
@@ -186,7 +186,7 @@ d = deque(maxlen=30)
 
 你还可以从任一端扩展这个队列中的数据：
 
-```python
+```pythonthon
 d = deque([1,2,3,4,5])
 d.extendleft([0])
 d.extend([6,7,8])
@@ -201,7 +201,7 @@ print(d)
 一个元组是一个不可变的列表，你可以存储一个数据的序列，它和命名元组（```namedtuples```）非常像，但有几个关键的不同。  
 主要相似点是都不像列表，你不能修改元组中的数据。为了获取元组中的数据，你需要使用整数作为索引：
 
-```python
+```pythonthon
 man = ('Ali', 30)
 print(man[0])
 
@@ -210,7 +210,7 @@ print(man[0])
 
 嗯，那 ```namedtuples``` 是什么呢？它把元组变成一个针对简单任务的容器。你不必使用整数索引来访问一个 ```namedtuples``` 的数据。你可以像字典（```dict```）一样访问 ```namedtuples```，但 ```namedtuples``` 是不可变的。
 
-```python
+```pythonthon
 from collections import namedtuple
 
 Animal = namedtuple('Animal', 'name age type')
@@ -234,7 +234,7 @@ print(perry.name)
 
 然而，要记住它是一个元组，属性值在 ```namedtuple``` 中是不可变的，所以下面的代码不能工作：
 
-```python
+```pythonthon
 from collections import namedtuple
 
 Animal = namedtuple('Animal', 'name age type')
@@ -249,7 +249,7 @@ perry.age = 42
 
 你应该使用命名元组来让代码**自文档**，**它们向后兼容于普通的元组**，这意味着你可以既使用整数索引，也可以使用名称来访问 ```namedtuple```：
 
-```python
+```pythonthon
 from collections import namedtuple
 
 Animal = namedtuple('Animal', 'name age type')
@@ -261,7 +261,7 @@ print(perry[0])
 
 最后，你可以将一个命名元组转换为字典，方法如下：
 
-```python
+```pythonthon
 from collections import namedtuple
 
 Animal = namedtuple('Animal', 'name age type')
@@ -281,7 +281,7 @@ print(perry._asdict())
 
 枚举可以帮助我们避免这个问题，通过不使用字符串。考虑以下这个例子：
 
-```python
+```pythonthon
 from collections import namedtuple
 from enum import Enum
 
@@ -310,7 +310,7 @@ charlie = Animal(name="Charlie", age=2, type=Species.kitten)
 
 ### 现在，我们进行一些测试：
 
-```python
+```pythonthon
 >>> charlie.type == tom.type
 True
 >>> charlie.type
@@ -321,7 +321,7 @@ True
 
 有三种方法访问枚举数据，例如以下方法都可以获取到 ```cat``` 的值：
 
-```python
+```pythonthon
 Species(1)
 Species['cat']
 Species.cat

@@ -30,7 +30,7 @@ Python中任意的对象，只要它定义了可以返回一个迭代器的 ```_
 
 生成器也是一种迭代器，但是你只能对其迭代一次。这是因为它们并没有把所有的值存在内存中，而是在运行时生成值。你通过遍历来使用它们，要么用一个 “for” 循环，要么将它们传递给任意可以进行迭代的函数和结构。大多数时候生成器是以函数来实现的。然而，它们并不返回一个值，而是 ```yield``` (暂且译作“生出”)一个值。这里有个生成器函数的简单例子：
 
-```python
+```pythonthon
 def generator_function():
     for i in range(10):
         yield i
@@ -58,7 +58,7 @@ for item in generator_function():
 
 下面是一个计算斐波那契数列的生成器：
 
-```python
+```pythonthon
 # generator version
 def fibon(n):
     a = b = 1
@@ -69,14 +69,14 @@ def fibon(n):
 
 函数使用方法如下：
 
-```python
+```pythonthon
 for x in fibon(1000000):
     print(x)
 ```
 
 用这种方式，我们可以不用担心它会使用大量资源。然而，之前如果我们这样来实现的话：
 
-```python
+```pythonthon
 def fibon(n):
     a = b = 1
     result = []
@@ -88,7 +88,7 @@ def fibon(n):
 
 这也许会在计算很大的输入参数时，用尽所有的资源。我们已经讨论过生成器使用一次迭代，但我们并没有测试过。在测试前你需要再知道一个Python内置函数：```next()```。它允许我们获取一个序列的下一个元素。那我们来验证下我们的理解：
 
-```python
+```pythonthon
 def generator_function():
     for i in range(3):
         yield i
@@ -108,7 +108,7 @@ print(next(gen))
 
 我们可以看到，在 ```yield``` 掉所有的值后，```next()``` 触发了一个 ```StopIteration``` 的异常。基本上这个异常告诉我们，所有的值都已经被 ```yield``` 完了。你也许会奇怪，为什么我们在使用 ```for``` 循环时没有这个异常呢？啊哈，答案很简单。```for``` 循环会自动捕捉到这个异常并停止调用 ```next()```。你知不知道Python中一些内置数据类型也支持迭代哦？我们这就去看看：
 
-```python
+```pythonthon
 my_string = "Yasoob"
 next(my_string)
 # Output: Traceback (most recent call last):
@@ -118,7 +118,7 @@ next(my_string)
 
 好吧，这不是我们预期的。这个异常说那个 ```str``` 对象不是一个迭代器。对，就是这样！它是一个可迭代对象，而不是一个迭代器。这意味着它支持迭代，但我们不能直接对其进行迭代操作。那我们怎样才能对它实施迭代呢？是时候学习下另一个内置函数，```iter```。它将根据一个可迭代对象返回一个迭代器对象。这里是我们如何使用它：
 
-```python
+```pythonthon
 my_string = "Yasoob"
 my_iter = iter(my_string)
 next(my_iter)

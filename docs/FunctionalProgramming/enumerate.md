@@ -12,14 +12,14 @@ nav_order: 1
 
 下面是一个例子：
 
-```python
+```pythonthon
 for counter, value in enumerate(some_list):
     print(counter, value)
 ```
 
 不只如此，```enumerate``` 也接受一些可选参数，这使它更有用。
 
-```python
+```pythonthon
 my_list = ['apple', 'banana', 'grapes', 'pear']
 for c, value in enumerate(my_list, 1):
     print(c, value)
@@ -35,7 +35,7 @@ for c, value in enumerate(my_list, 1):
 你还可以用来创建包含索引的元组列表，
 例如：
 
-```python
+```pythonthon
 my_list = ['apple', 'banana', 'grapes', 'pear']
 counter_list = list(enumerate(my_list, 1))
 print(counter_list)

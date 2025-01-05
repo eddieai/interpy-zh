@@ -24,7 +24,7 @@ $ python -m pdb my_script.py
 
 同时，你也可以在脚本内部设置断点，这样就可以在某些特定点查看变量信息和各种执行时信息了。这里将使用 ```pdb.set_trace()``` 方法来实现。举个例子：
 
-```python
+```pythonthon
 import pdb
 
 def make_bread():

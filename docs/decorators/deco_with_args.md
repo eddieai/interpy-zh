@@ -14,7 +14,7 @@ nav_order: 3
 
 我们回到日志的例子，并创建一个包裹函数，能让我们指定一个用于输出的日志文件。
 
-```python
+```pythonthon
 from functools import wraps
 
 def logit(logfile='out.log'):
@@ -55,7 +55,7 @@ myfunc2()
 
 幸运的是，类也可以用来构建装饰器。那我们现在以一个类而不是一个函数的方式，来重新构建 ```logit```。
 
-```python
+```pythonthon
 class logit(object):
 
     _logfile = 'out.log'
@@ -85,7 +85,7 @@ class logit(object):
 
 这个实现有一个附加优势，在于比嵌套函数的方式更加整洁，而且包裹一个函数还是使用跟以前一样的语法：
 
-```python
+```pythonthon
 logit._logfile = 'out2.log' # 如果需要修改log文件参数
 @logit
 def myfunc1():
@@ -97,7 +97,7 @@ myfunc1()
 
 现在，我们给```logit```创建子类，来添加email的功能(虽然email这个话题不会在这里展开)。
 
-```python
+```pythonthon
 class email_logit(logit):
     '''
     一个logit的实现版本，可以在函数调用时发送email给管理员
@@ -114,7 +114,7 @@ class email_logit(logit):
 
 从现在起，```@email_logit``` 将会和 ```@logit``` 产生同样的效果，但是在打日志的基础上，还会多发送一封邮件给管理员。
 
-```python
+```pythonthon
 email_logit._logfile = 'out3.log' # 如果需要修改log文件参数
 @email_logit
 def myfunc2():

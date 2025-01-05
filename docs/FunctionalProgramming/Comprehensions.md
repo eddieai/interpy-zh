@@ -21,13 +21,13 @@ nav_order: 5
 
 ## 规范
 
-```python
+```pythonthon
 variable = [out_exp for out_exp in input_list if out_exp == 2]
 ```
 
 这里是另外一个简明例子:
 
-```python
+```pythonthon
 multiples = [i for i in range(30) if i % 3 is 0]
 print(multiples)
 # Output: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
@@ -37,7 +37,7 @@ print(multiples)
 有些人甚至更喜欢使用它而不是 ```filter``` 函数。  
 列表推导式在有些情况下超赞，特别是当你需要使用 ```for``` 循环来生成一个新列表。举个例子，你通常会这样做：
 
-```python
+```pythonthon
 squared = []
 for x in range(10):
     squared.append(x**2)
@@ -45,7 +45,7 @@ for x in range(10):
 
 你可以使用列表推导式来简化它，就像这样：
 
-```python
+```pythonthon
 squared = [x**2 for x in range(10)]
 ```
 
@@ -54,7 +54,7 @@ squared = [x**2 for x in range(10)]
 
 字典推导和列表推导的使用方法是类似的。这里有个我最近发现的例子：
 
-```python
+```pythonthon
 mcase = {'a': 10, 'b': 34, 'A': 7, 'Z': 3}
 
 mcase_frequency = {
@@ -71,7 +71,7 @@ mcase_frequency = {
 
 你还可以快速对换一个字典的键和值：
 
-```python
+```pythonthon
 {v: k for k, v in some_dict.items()}
 ```
 
@@ -79,7 +79,7 @@ mcase_frequency = {
 
 它们跟列表推导式也是类似的。 唯一的区别在于它们使用大括号```{}```。 举个例子：
 
-```python
+```pythonthon
 squared = {x**2 for x in [1, 1, 2]}
 print(squared)
 # Output: {1, 4}

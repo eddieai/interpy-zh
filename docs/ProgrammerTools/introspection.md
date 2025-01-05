@@ -13,7 +13,7 @@ nav_order: 3
 
 它是用于自省的最重要的函数之一。它返回一个列表，列出了一个对象所拥有的属性和方法。这里是一个例子：
 
-```python
+```pythonthon
 my_list = [1, 2, 3]
 dir(my_list)
 # Output: ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__',
@@ -33,7 +33,7 @@ dir(my_list)
 
 `type` 函数返回一个对象的类型。举个例子：
 
-```python
+```pythonthon
 print(type(''))
 # Output: <type 'str'>
 
@@ -52,7 +52,7 @@ print(type(3))
 
 `id()` 函数返回任意不同种类对象的唯一ID，举个例子：
 
-```python
+```pythonthon
 name = "Yasoob"
 print(id(name))
 # Output: 139972439030304
@@ -63,7 +63,7 @@ print(id(name))
 
 `inspect` 模块也提供了许多有用的函数，来获取活跃对象的信息。比方说，你可以查看一个对象的成员，只需运行：
 
-```python
+```pythonthon
 import inspect
 print(inspect.getmembers(str))
 # Output: [('__add__', <slot wrapper '__add__' of ... ...

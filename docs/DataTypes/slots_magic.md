@@ -14,7 +14,7 @@ nav_order: 3
 
 - 不使用 ```__slots__```:
 
-```python
+```pythonthon
 class MyClass(object):
     def __init__(self, name, identifier):
         self.name = name
@@ -25,7 +25,7 @@ class MyClass(object):
 
 - 使用 ```__slots__```:
 
-```python
+```pythonthon
 class MyClass(object):
     __slots__ = ['name', 'identifier']
     def __init__(self, name, identifier):
@@ -41,7 +41,7 @@ class MyClass(object):
 
 以下你可以看到一个例子，它用 IPython 来展示在有与没有 ```__slots__``` 情况下的精确内存占用，感谢 https://github.com/ianozsvald/ipython_memory_usage
 
-```python
+```pythonthon
 Python 3.4.3 (default, Jun  6 2015, 13:32:34)
 Type "copyright", "credits" or "license" for more information.
 

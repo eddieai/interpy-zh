@@ -45,7 +45,7 @@ float add_float(float num1, float num2){
     return num1 + num2;
 
 }
-```
+```python
 
 接下来将C文件编译为 ```.so``` 文件（windows 下为 DLL）。下面操作会生成 ```adder.so``` 文件：
 
@@ -56,7 +56,7 @@ $  gcc -shared -Wl,-soname,adder -o adder.so -fPIC add.c
 #For Mac
 $ gcc -shared -Wl,-install_name,adder.so -o adder.so -fPIC add.c
 
-```
+```python
 
 现在在你的Python代码中来调用它
 
@@ -78,14 +78,14 @@ add_float = adder.add_float
 add_float.restype = c_float
 print "Sum of 5.5 and 4.1 = ", str(add_float(a, b))
 
-```
+```python
 
 输出如下
 
 ```Shell
 Sum of 4 and 5 = 9
 Sum of 5.5 and 4.1 =  9.60000038147
-```
+```python
 
 在这个例子中，C 文件是自解释的，它包含两个函数，分别实现了整形求和和浮点型求和。
 
@@ -125,7 +125,7 @@ char *get_time()
     return ctime(&ltime);
 
 }
-```
+```python
 
 编译它：
 
@@ -135,7 +135,7 @@ unix % gcc -c example.c example_wrap.c \
     -I/usr/local/include/python2.1
 unix % ld -shared example.o example_wrap.o -o _example.so
 
-```
+```python
 
 最后，Python的输出：
 
@@ -148,7 +148,7 @@ unix % ld -shared example.o example_wrap.o -o _example.so
 >>> example.get_time()
 'Sun Feb 11 23:01:07 1996'
 >>>
-```
+```python
 
 我们可以看到，使用SWIG确实达到了同样的效果，虽然下了更多的工夫，但如果你的目标是多语言还是很值得的。
 
@@ -171,7 +171,7 @@ import addList
 l = [1,2,3,4,5]
 print "Sum of List - " + str(l) + " = " +  str(addList.add(l))
 
-```
+```python
 
 上面的代码和普通的 Python 文件并没有什么分别，导入并使用了另一个叫做 ```addList``` 的Python模块。唯一差别就是这个模块并不是用 Python 编写的，而是 C。
 
@@ -234,7 +234,7 @@ PyMODINIT_FUNC initaddList(void){
 
 }
 
-```
+```python
 
 逐步解释
 
@@ -251,7 +251,7 @@ char *s;
 PyObject* list;
 PyArg_ParseTuple(args, "siO", &n, &s, &list);
 
-```
+```python
 
 在这种情况下，我们只需要提取一个列表对象，并将它存储在 ```listObj``` 变量中。然后用列表对象中的 ```PyList_Size()``` 函数来获取它的长度。就像 Python 中调用```len(list)```。
 
@@ -268,13 +268,13 @@ from distutils.core import setup, Extension
 
 setup(name='addList', version='1.0',  \
       ext_modules=[Extension('addList', ['adder.c'])])
-```
+```python
 
 并且运行：
 
 ```Shell
 python setup.py install
-```
+```python
 
 现在应该已经将我们的 C 文件编译安装到我们的 Python 模块中了。
 
@@ -286,7 +286,7 @@ import addList
 
 l = [1,2,3,4,5]
 print "Sum of List - " + str(l) + " = " +  str(addList.add(l))
-```
+```python
 
 输出结果如下：
 

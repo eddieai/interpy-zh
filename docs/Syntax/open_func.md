@@ -7,7 +7,7 @@ nav_order: 5
 
 [open](http://docs.python.org/dev/library/functions.html#open) 函数可以打开一个文件。超级简单吧？大多数时候，我们看到它这样被使用：
 
-```python
+```pythonthon
 f = open('photo.jpg', 'r+')
 jpgdata = f.read()
 f.close()
@@ -19,7 +19,7 @@ f.close()
 
 显式地调用 ```close``` 关闭了这个文件句柄，但前提是只有在 read 成功的情况下。如果有任意异常正好在 ```f = open(...)``` 之后产生，```f.close()``` 将不会被调用（取决于 Python 解释器的做法，文件句柄可能还是会被归还，但那是另外的话题了）。为了确保不管异常是否触发，文件都能关闭，我们将其包裹成一个 ```with``` 语句:
 
-```python
+```pythonthon
 with open('photo.jpg', 'r+') as f:
     jpgdata = f.read()
 ```
@@ -44,7 +44,7 @@ with open('photo.jpg', 'r+') as f:
 
 有了这些基础知识，我们来写一个程序，读取一个文件，检测它是否是 JPG（提示：这些文件头部以字节 ```FF D8``` 开始），把对输入文件的描述写入一个文本文件。
 
-```python
+```pythonthon
 import io
 
 with open('photo.jpg', 'rb') as inf:

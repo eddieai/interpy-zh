@@ -19,7 +19,7 @@ nav_order: 3
 
 我们来看一个例子：
 
-```python
+```pythonthon
 class Cal(object):
     # pi 是类变量
     pi = 3.142
@@ -53,7 +53,7 @@ b.pi
 使用不可变类变量时没有太多问题。因为一切正常，初学者不会尝试更多地了解这个主题，这是主要原因！
 如果你还认为如果使用不正确，实例和类变量不会导致任何问题，看看下一个示例。
 
-```python
+```pythonthon
 class SuperClass(object):
     superpowers = []
 
@@ -92,7 +92,7 @@ Python 2.1 中引入了新的样式类，但是现在很多人都不知道它们
 
 一个非常基本的例子是：
 
-```python
+```pythonthon
 class OldClass():
     def __init__(self):
         print('I am an old class')
@@ -120,7 +120,7 @@ Python 的类以其神奇的方法而闻名，通常称为 **dunder**（双下�
 
 它是一个类初始化器。 每当创建一个类的实例时，都会调用其 ```__init__``` 方法。 例如：
 
-```python
+```pythonthon
 class GetTest(object):
     def __init__(self):
         print('Greetings!!')
@@ -138,7 +138,7 @@ a.another_method()
 
 你可以看到在实例在创建后会立即调用 ```__init__```。 你还可以在初始化期间将参数传递给类。像这样：
 
-```python
+```pythonthon
 class GetTest(object):
     def __init__(self, name):
         print('Greetings!! {0}'.format(name))
@@ -162,7 +162,7 @@ TypeError: __init__() takes exactly 2 arguments (1 given)
 
 在类中实现 **getitem** 允许其实例使用 ```[]```（索引器）运算符。这是一个例子：
 
-```python
+```pythonthon
 class GetTest(object):
     def __init__(self):
         self.info = {
@@ -185,7 +185,7 @@ foo['number']
 
 如果没有 ```__getitem__```方法，我们会遇到以下错误：
 
-```python
+```pythonthon
 >>> foo['name']
 
 Traceback (most recent call last):
