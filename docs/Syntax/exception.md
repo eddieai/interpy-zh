@@ -9,7 +9,7 @@ nav_order: 1
 
 最基本的术语里我们知道了 ```try/except``` 从句。可能触发异常产生的代码会放到 ```try``` 语句块里，而处理异常的代码会在 ```except``` 语句块里实现。这是一个简单的例子：
 
-```pythonthon
+```python
 try:
     file = open('test.txt', 'rb')
 except IOError as e:
@@ -25,7 +25,7 @@ except IOError as e:
 
 第一种方法需要把所有可能发生的异常放到一个元组里。像这样：
 
-```pythonthon
+```python
 try:
     file = open('test.txt', 'rb')
 except (IOError, EOFError) as e:
@@ -34,7 +34,7 @@ except (IOError, EOFError) as e:
 
 另外一种方式是对每个单独的异常在单独的 ```except``` 语句块中处理。我们想要多少个 ```except``` 语句块都可以。这里是个例子：
 
-```pythonthon
+```python
 try:
     file = open('test.txt', 'rb')
 except EOFError as e:
@@ -49,7 +49,7 @@ except IOError as e:
 
 现在，最后一种方式会捕获**所有**异常：
 
-```pythonthon
+```python
 try:
     file = open('test.txt', 'rb')
 except Exception:
@@ -66,7 +66,7 @@ except Exception:
 
 在下面的例子中，我们还会使用第三个从句，那就是 ```finally``` 从句。包裹到 ```finally``` 从句中的代码不管异常是否触发都将会被执行。这可以被用来在脚本执行之后做清理工作。这里是个简单的例子：
 
-```pythonthon
+```python
 try:
     file = open('test.txt', 'rb')
 except IOError as e:
@@ -87,7 +87,7 @@ finally:
 
 大多数人并不使用 ```else``` 从句，而且坦率地讲我自己也没有大范围使用。这里是个例子：
 
-```pythonthon
+```python
 try:
     print('I am sure no exception is going to occur!')
 except Exception:

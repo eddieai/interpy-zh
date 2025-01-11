@@ -24,7 +24,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
                 
             
         
@@ -49,7 +49,7 @@
     
     
     <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
@@ -656,60 +656,60 @@
 <li>类变量用于在类的不同实例之间共享的数据。</li>
 </ul>
 <p>我们来看一个例子：</p>
-<pre><code class="lang-pythonthon">class Cal(object):
-    # pi 是类变量
-    pi = 3.142
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cal</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class="hljs-comment"># pi 是类变量</span>
+    pi = <span class="hljs-number">3.142</span>
 
-    def __init__(self, radius):
-        # self.radius 是实例变量
-        self.radius = radius
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, radius</span>):
+        <span class="hljs-comment"># self.radius 是实例变量</span>
+        <span class="hljs-variable language_">self</span>.radius = radius
 
-    def area(self):
-        return self.pi * (self.radius ** 2)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">area</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.pi * (<span class="hljs-variable language_">self</span>.radius ** <span class="hljs-number">2</span>)
 
-a = Cal(32)
+a = Cal(<span class="hljs-number">32</span>)
 a.area()
-# Output: 3217.408
+<span class="hljs-comment"># Output: 3217.408</span>
 a.pi
-# Output: 3.142
-a.pi = 43
+<span class="hljs-comment"># Output: 3.142</span>
+a.pi = <span class="hljs-number">43</span>
 a.pi
-# Output: 43
+<span class="hljs-comment"># Output: 43</span>
 
-b = Cal(44)
+b = Cal(<span class="hljs-number">44</span>)
 b.area()
-# Output: 6082.912
+<span class="hljs-comment"># Output: 6082.912</span>
 b.pi
-# Output: 3.142
-b.pi = 50
+<span class="hljs-comment"># Output: 3.142</span>
+b.pi = <span class="hljs-number">50</span>
 b.pi
-# Output: 50
+<span class="hljs-comment"># Output: 50</span>
 </code></pre>
 <p>使用不可变类变量时没有太多问题。因为一切正常，初学者不会尝试更多地了解这个主题，这是主要原因！
 如果你还认为如果使用不正确，实例和类变量不会导致任何问题，看看下一个示例。</p>
-<pre><code class="lang-pythonthon">class SuperClass(object):
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">SuperClass</span>(<span class="hljs-title class_ inherited__">object</span>):
     superpowers = []
 
-    def __init__(self, name):
-        self.name = name
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):
+        <span class="hljs-variable language_">self</span>.name = name
 
-    def add_superpower(self, power):
-        self.superpowers.append(power)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add_superpower</span>(<span class="hljs-params">self, power</span>):
+        <span class="hljs-variable language_">self</span>.superpowers.append(power)
 
-foo = SuperClass('foo')
-bar = SuperClass('bar')
+foo = SuperClass(<span class="hljs-string">'foo'</span>)
+bar = SuperClass(<span class="hljs-string">'bar'</span>)
 foo.name
-# Output: 'foo'
+<span class="hljs-comment"># Output: 'foo'</span>
 
 bar.name
-# Output: 'bar'
+<span class="hljs-comment"># Output: 'bar'</span>
 
-foo.add_superpower('fly')
+foo.add_superpower(<span class="hljs-string">'fly'</span>)
 bar.superpowers
-# Output: ['fly']
+<span class="hljs-comment"># Output: ['fly']</span>
 
 foo.superpowers
-# Output: ['fly']
+<span class="hljs-comment"># Output: ['fly']</span>
 </code></pre>
 <p>这是可变类变量错误使用的美妙之处。为了使你的代码安全抵御这种意外攻击，请确保你不使用可变类变量。
 只有当你知道自己在做什么时，才可以使用它们。</p>
@@ -721,19 +721,19 @@ foo.superpowers
 <li>新样式基类继承自 <code>object</code>。</li>
 </ul>
 <p>一个非常基本的例子是：</p>
-<pre><code class="lang-pythonthon">class OldClass():
-    def __init__(self):
-        print('I am an old class')
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">OldClass</span>():
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'I am an old class'</span>)
 
-class NewClass(object):
-    def __init__(self):
-        print('I am a jazzy new class')
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">NewClass</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'I am a jazzy new class'</span>)
 
 old = OldClass()
-# Output: I am an old class
+<span class="hljs-comment"># Output: I am an old class</span>
 
 new = NewClass()
-# Output: I am a jazzy new class
+<span class="hljs-comment"># Output: I am a jazzy new class</span>
 </code></pre>
 <p>从 <code>object</code> 继承允许新样式类利用一些 <strong>魔法</strong>。 一个主要优点是您可以使用一些有用的优化，如 <code>__slots__</code>。 您可以使用 <code>super()</code> 和描述符等。 底线？总是尝试使用新式的类。</p>
 <p><strong>注意</strong>：Python 3 只有新式的类。无论您是否从 <code>object</code> 继承，都无关紧要。但是，建议您仍然从 <code>object</code> 继承。</p>
@@ -743,67 +743,67 @@ new = NewClass()
 <li><code>__init__</code></li>
 </ul>
 <p>它是一个类初始化器。 每当创建一个类的实例时，都会调用其 <code>__init__</code> 方法。 例如：</p>
-<pre><code class="lang-pythonthon">class GetTest(object):
-    def __init__(self):
-        print('Greetings!!')
-    def another_method(self):
-        print('I am another method which is not'
-              ' automatically called')
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">GetTest</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'Greetings!!'</span>)
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">another_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'I am another method which is not'</span>
+              <span class="hljs-string">' automatically called'</span>)
 
 a = GetTest()
-# Output: Greetings!!
+<span class="hljs-comment"># Output: Greetings!!</span>
 
 a.another_method()
-# Output: I am another method which is not automatically
-# called
+<span class="hljs-comment"># Output: I am another method which is not automatically</span>
+<span class="hljs-comment"># called</span>
 </code></pre>
 <p>你可以看到在实例在创建后会立即调用 <code>__init__</code>。 你还可以在初始化期间将参数传递给类。像这样：</p>
-<pre><code class="lang-pythonthon">class GetTest(object):
-    def __init__(self, name):
-        print('Greetings!! {0}'.format(name))
-    def another_method(self):
-        print('I am another method which is not'
-              ' automatically called')
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">GetTest</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'Greetings!! {0}'</span>.<span class="hljs-built_in">format</span>(name))
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">another_method</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'I am another method which is not'</span>
+              <span class="hljs-string">' automatically called'</span>)
 
-a = GetTest('yasoob')
-# Output: Greetings!! yasoob
+a = GetTest(<span class="hljs-string">'yasoob'</span>)
+<span class="hljs-comment"># Output: Greetings!! yasoob</span>
 
-# Try creating an instance without the name arguments
+<span class="hljs-comment"># Try creating an instance without the name arguments</span>
 b = GetTest()
 Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-TypeError: __init__() takes exactly 2 arguments (1 given)
+  File <span class="hljs-string">"&lt;stdin&gt;"</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+TypeError: __init__() takes exactly <span class="hljs-number">2</span> arguments (<span class="hljs-number">1</span> given)
 </code></pre>
 <p>我相信你现在了解了 <code>__init__</code> 方法。</p>
 <ul>
 <li><code>__getitem__</code></li>
 </ul>
 <p>在类中实现 <strong>getitem</strong> 允许其实例使用 <code>[]</code>（索引器）运算符。这是一个例子：</p>
-<pre><code class="lang-pythonthon">class GetTest(object):
-    def __init__(self):
-        self.info = {
-            'name':'Yasoob',
-            'country':'Pakistan',
-            'number':12345812
+<pre><code class="lang-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">GetTest</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-variable language_">self</span>.info = {
+            <span class="hljs-string">'name'</span>:<span class="hljs-string">'Yasoob'</span>,
+            <span class="hljs-string">'country'</span>:<span class="hljs-string">'Pakistan'</span>,
+            <span class="hljs-string">'number'</span>:<span class="hljs-number">12345812</span>
         }
 
-    def __getitem__(self,i):
-        return self.info[i]
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__getitem__</span>(<span class="hljs-params">self,i</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.info[i]
 
 foo = GetTest()
 
-foo['name']
-# Output: 'Yasoob'
+foo[<span class="hljs-string">'name'</span>]
+<span class="hljs-comment"># Output: 'Yasoob'</span>
 
-foo['number']
-# Output: 12345812
+foo[<span class="hljs-string">'number'</span>]
+<span class="hljs-comment"># Output: 12345812</span>
 </code></pre>
 <p>如果没有 <code>__getitem__</code>方法，我们会遇到以下错误：</p>
-<pre><code class="lang-pythonthon">&gt;&gt;&gt; foo['name']
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>foo[<span class="hljs-string">'name'</span>]
 
 Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-TypeError: 'GetTest' object has no attribute '__getitem__'
+  File <span class="hljs-string">"&lt;stdin&gt;"</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;module&gt;
+TypeError: <span class="hljs-string">'GetTest'</span> <span class="hljs-built_in">object</span> has no attribute <span class="hljs-string">'__getitem__'</span>
 </code></pre>
 
                                 
@@ -848,7 +848,7 @@ TypeError: 'GetTest' object has no attribute '__getitem__'
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"parent":"数据结构","nav_order":3,"title":"类","level":"6.3","depth":1,"next":{"title":"容器（Collections）","level":"7.1","depth":1,"path":"DataTypes/collections.md","ref":"DataTypes/collections.md","articles":[]},"previous":{"title":"协程","level":"6.2","depth":1,"path":"DataStructures/Coroutines.md","ref":"DataStructures/Coroutines.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"DataStructures/classes.md","mtime":"2025-01-05T18:00:33.497Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-05T18:00:45.040Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"parent":"数据结构","nav_order":3,"title":"类","level":"6.3","depth":1,"next":{"title":"容器（Collections）","level":"7.1","depth":1,"path":"DataTypes/collections.md","ref":"DataTypes/collections.md","articles":[]},"previous":{"title":"协程","level":"6.2","depth":1,"path":"DataStructures/Coroutines.md","ref":"DataStructures/Coroutines.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"DataStructures/classes.md","mtime":"2025-01-11T00:02:01.079Z","type":"markdown"},"gitbook":{"version":"6.0.2","time":"2025-01-11T18:47:45.912Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -918,7 +918,7 @@ TypeError: 'GetTest' object has no attribute '__getitem__'
         
     
         
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
         
     
 

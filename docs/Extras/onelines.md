@@ -23,7 +23,7 @@ python -m http.server
 
 你可以在 Python REPL 漂亮的打印出列表和字典。这里是相关的代码：
 
-```pythonthon
+```python
 from pprint import pprint
 
 my_dict = {'name': 'Yasoob', 'age': 'undefined', 'personality': 'awesome'}
@@ -60,7 +60,7 @@ python -c "import csv,json;print json.dumps(list(csv.reader(open('csv_file.csv')
 
 您可以通过使用 ```itertools``` 包中的 ```itertools.chain.from_iterable``` 轻松快速的辗平一个列表。下面是一个简单的例子：
 
-```pythonthon
+```python
 a_list = [[1, 2], [3, 4], [5, 6]]
 print(list(itertools.chain.from_iterable(a_list)))
 # Output: [1, 2, 3, 4, 5, 6]
@@ -74,7 +74,7 @@ print(list(itertools.chain(*a_list)))
 
 避免类初始化时大量重复的赋值语句：
 
-```pythonthon
+```python
 class A(object):
     def __init__(self, a, b, c, d, e, f):
         self.__dict__.update({k: v for k, v in locals().items() if k != 'self'})

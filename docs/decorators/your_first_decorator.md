@@ -7,7 +7,7 @@ nav_order: 2
 
 在上一个例子里，其实我们已经创建了一个装饰器！现在我们修改下上一个装饰器，并编写一个稍微更有用点的程序：
 
-```pythonthon
+```python
 def a_new_decorator(a_func):
 
     def wrapTheFunction():
@@ -36,7 +36,7 @@ a_function_requiring_decoration()
 
 你看明白了吗？我们刚刚应用了之前学习到的原理。这正是python中装饰器做的事情！它们封装一个函数，并且用这样或者那样的方式来修改它的行为。现在你也许疑惑，我们在代码里并没有使用 ```@``` 符号？那只是一个简短的方式来生成一个被装饰的函数。这里是我们如何使用 ```@``` 来运行之前的代码：
 
-```pythonthon
+```python
 @a_new_decorator
 def a_function_requiring_decoration():
     """Hey you! Decorate me!"""
@@ -54,14 +54,14 @@ a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoratio
 
 希望你现在对 Python 装饰器的工作原理有一个基本的理解。如果我们运行如下代码会存在一个问题：
 
-```pythonthon
+```python
 print(a_function_requiring_decoration.__name__)
 # Output: wrapTheFunction
 ```
 
 这并不是我们想要的！Ouput 输出应该是 “a_function_requiring_decoration”。这里的函数被 warpTheFunction 替代了。它重写了我们函数的名字和注释文档（docstring）。幸运的是 Python 提供给我们一个简单的函数来解决这个问题，那就是 ```functools.wraps```。我们修改上一个例子来使用 ```functools.wraps```：
 
-```pythonthon
+```python
 from functools import wraps
 
 def a_new_decorator(a_func):
@@ -86,7 +86,7 @@ print(a_function_requiring_decoration.__name__)
 
 蓝本规范:
 
-```pythonthon
+```python
 from functools import wraps
 def decorator_name(f):
     @wraps(f)
@@ -119,7 +119,7 @@ print(func())
 
 装饰器能有助于检查某个人是否被授权去使用一个 web 应用的端点（endpoint）。它们被大量使用于 Flask 和 Django web 框架中。这里是一个例子来使用基于装饰器的授权：
 
-```pythonthon
+```python
 from functools import wraps
 
 def requires_auth(f):
@@ -136,7 +136,7 @@ def requires_auth(f):
 
 日志是装饰器运用的另一个亮点。这是个例子：
 
-```pythonthon
+```python
 from functools import wraps
 
 def logit(func):

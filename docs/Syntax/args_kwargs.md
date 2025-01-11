@@ -17,7 +17,7 @@ nav_order: 6
 
 这里有个例子帮你理解这个概念：
 
-```pythonthon
+```python
 def test_var_args(f_arg, *argv):
     print("first normal arg:", f_arg)
     for arg in argv:
@@ -28,7 +28,7 @@ test_var_args('yasoob', 'python', 'eggs', 'test')
 
 这会产生如下输出：
 
-```pythonthon
+```python
 first normal arg: yasoob
 another arg through *argv: python
 another arg through *argv: eggs
@@ -44,7 +44,7 @@ another arg through *argv: test
 
 这里有个让你上手的例子:
 
-```pythonthon
+```python
 def greet_me(**kwargs):
     for key, value in kwargs.items():
         print("{0} == {1}".format(key, value))
@@ -63,7 +63,7 @@ name == yasoob
 
 那现在我们将看到怎样使用 ```*args``` 和 ```**kwargs``` 来调用一个函数。假设，你有这样一个小函数：
 
-```pythonthon
+```python
 def test_args_kwargs(arg1, arg2, arg3):
     print("arg1:", arg1)
     print("arg2:", arg2)
@@ -72,7 +72,7 @@ def test_args_kwargs(arg1, arg2, arg3):
 
 你可以使用```*args```或```**kwargs```来给这个小函数传递参数。下面是怎样做：
 
-```pythonthon
+```python
 # 首先使用 *args
 >>> args = ("two", 3, 5)
 >>> test_args_kwargs(*args)
@@ -92,7 +92,7 @@ arg3: 3
 
 那么如果你想在函数里同时使用所有这三种参数， 顺序是这样的：
 
-```pythonthon
+```python
 some_func(fargs, *args, **kwargs)
 ```
 
@@ -105,7 +105,7 @@ some_func(fargs, *args, **kwargs)
 
 此外它也可以用来做猴子补丁（monkey patching）。猴子补丁的意思是在程序运行时（runtime）修改某些代码。打个比方，你有一个类，里面有个叫 ```get_info``` 的函数会调用一个API并返回相应的数据。如果我们想测试它，可以把API调用替换成一些测试数据。例如：
 
-```pythonthon
+```python
 import someclass
 
 def get_info(self, *args):

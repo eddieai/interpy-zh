@@ -11,13 +11,13 @@ nav_order: 2
 
 __原型__
 
-```pythonthon
+```python
     lambda 参数:操作(参数)
 ```
 
 **例子**
 
-```pythonthon
+```python
     add = lambda x, y: x + y
 
     print(add(3, 5))
@@ -28,7 +28,7 @@ __原型__
 
 __列表排序__
 
-```pythonthon
+```python
     a = [(1, 2), (4, 1), (9, 10), (13, -3)]
     a.sort(key=lambda x: x[1])
 
@@ -38,7 +38,7 @@ __列表排序__
 
 __列表并行排序__
 
-```pythonthon
+```python
     data = zip(list1, list2)
     data = sorted(data)  # 此处已经完成了列表并行排序
     # 下面展示了反向zip, 即还原出被zip的2个list

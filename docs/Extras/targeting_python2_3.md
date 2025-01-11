@@ -18,14 +18,14 @@ nav_order: 2
 
 上下文管理器是 Python2.6+ 引入的新特性，如果你想在 Python2.5 中使用它可以这样做：
 
-```pythonthon
+```python
 from __future__ import with_statement
 
 ```
 
 在 Python3 中 ```print``` 已经变为一个函数。如果你想在 Python2 中使用它可以通过 ```__future__``` 导入：
 
-```pythonthon
+```python
 print
 # Output:
 
@@ -38,7 +38,7 @@ print(print)
 
 首先，告诉我你是如何在你的脚本中导入模块的。大多时候我们会这样做：
 
-```pythonthon
+```python
 import foo
 # or
 from foo import bar
@@ -46,13 +46,13 @@ from foo import bar
 
 你知道么，其实你也可以这样做：
 
-```pythonthon
+```python
 import foo as foo
 ```
 
 这样做可以起到和上面代码同样的功能，但最重要的是它能让你的脚本同时兼容 Python2 和 Python3。现在我们来看下面的代码：
 
-```pythonthon
+```python
 try:
     import urllib.request as urllib_request  # for Python 3
 except ImportError:
@@ -69,14 +69,14 @@ except ImportError:
 
 另一个需要了解的事情就是 Python2 中有12个内置功能在 Python3 中已经被移除了。要确保在 Python2 代码中不要出现这些功能来保证对 Python3 的兼容。这有一个强制让你放弃12内置功能的方法：
 
-```pythonthon
+```python
 from future.builtins.disabled import *
 
 ```
 
 现在，只要你尝试在 Python3 中使用这些被遗弃的模块时，就会抛出一个 ```NameError``` 异常如下：
 
-```pythonthon
+```python
 from future.builtins.disabled import *
 
 apply()

@@ -16,7 +16,7 @@ nav_order: 1
 
 首先我们来理解下 Python 中的函数
 
-```pythonthon
+```python
 def hi(name="yasoob"):
     return "hi " + name
 
@@ -44,7 +44,7 @@ print(greet())
 
 刚才那些就是函数的基本知识了。我们来让你的知识更进一步。在 Python 中我们可以在一个函数中定义另一个函数：
 
-```pythonthon
+```python
 def hi(name="yasoob"):
     print("now you are inside the hi() function")
 
@@ -78,7 +78,7 @@ greet()
 
 其实并不需要在一个函数里去执行另一个函数，我们也可以将其作为输出返回出来：
 
-```pythonthon
+```python
 def hi(name="yasoob"):
     def greet():
         return "now you are in the greet() function"
@@ -111,7 +111,7 @@ print(a())
 
 # 将函数作为参数传给另一个函数
 
-```pythonthon
+```python
 def hi():
     return "hi yasoob!"
 

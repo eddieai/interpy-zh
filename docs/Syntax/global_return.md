@@ -7,7 +7,7 @@ nav_order: 4
 
 你也许遇到过, python中一些函数在最尾部有一个 ```return``` 关键字。你知道它是干嘛吗？它和其他语言的 ```return``` 类似。我们来检查下这个小函数：
 
-```pythonthon
+```python
 def add(value1, value2):
     return value1 + value2
 
@@ -18,7 +18,7 @@ print(result)
 
 上面这个函数将两个值作为输入，然后输出它们相加之和。我们也可以这样做：
 
-```pythonthon
+```python
 def add(value1,value2):
     global result
     result = value1 + value2
@@ -34,7 +34,7 @@ print(result)
 
 ```global``` 在这的意思是什么？```global``` 变量意味着我们可以在函数以外的区域都能访问这个变量。让我们通过一个例子来证明它：
 
-```pythonthon
+```python
 # 首先，是没有使用global变量
 def add(value1, value2):
     result = value1 + value2
@@ -67,7 +67,7 @@ print(result)
 那如果你想从一个函数里返回两个变量而不是一个呢？
 新手们有若干种方法。最著名的方法，是使用 ```global``` 关键字。让我们看下这个没用的例子：
 
-```pythonthon
+```python
 def profile():
     global name
     global age
@@ -86,7 +86,7 @@ print(age)
 
 有些人试着在函数结束时，返回一个包含多个值的 ```tuple```(元组)，```list```(列表)或者 ```dict```(字典)，来解决这个问题。这是一种可行的方式，而且使用起来像一个黑魔法：
 
-```pythonthon
+```python
 def profile():
     name = "Danny"
     age = 30
@@ -102,7 +102,7 @@ print(profile_data[1])
 
 或者按照更常见的惯例：
 
-```pythonthon
+```python
 def profile():
     name = "Danny"
     age = 30
